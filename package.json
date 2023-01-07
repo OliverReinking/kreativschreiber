@@ -35,6 +35,7 @@
         "@tiptap/vue-3": "^2.0.0-beta.199",
         "laravel-vue-i18n": "^2.2.2",
         "prosemirror-commands": "^1.5.0",
+        "prosemirror-dropcursor": "^1.5.0",
         "prosemirror-keymap": "^1.2.0",
         "prosemirror-schema-list": "^1.2.2",
         "tippy.vue": "^3.2.1",
