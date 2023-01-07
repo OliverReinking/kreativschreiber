@@ -34,6 +34,7 @@
         "@tiptap/starter-kit": "^2.0.0-beta.199",
         "@tiptap/vue-3": "^2.0.0-beta.199",
         "laravel-vue-i18n": "^2.2.2",
+        "prosemirror-commands": "^1.5.0",
         "prosemirror-keymap": "^1.2.0",
         "tippy.vue": "^3.2.1",
         "vue-cookie-accept-decline": "^6.1.0",
