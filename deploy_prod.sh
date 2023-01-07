@@ -3,7 +3,7 @@
 composer install --optimize-autoloader --no-dev
 
 npm install
-npm run prod
+npm run build
 
 php artisan cache:clear
 php artisan config:clear
