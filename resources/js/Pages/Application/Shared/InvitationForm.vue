@@ -180,10 +180,6 @@ export default {
       if (this.applicationName == this.$page.props.applications.app_admin) {
         routeInvitationCreate = "admin.teammember.store";
       } else if (
-        this.applicationName == this.$page.props.applications.app_employee
-      ) {
-        routeInvitationCreate = "employee.teammember.store";
-      } else if (
         this.applicationName == this.$page.props.applications.app_customer
       ) {
         routeInvitationCreate = "customer.teammember.store";

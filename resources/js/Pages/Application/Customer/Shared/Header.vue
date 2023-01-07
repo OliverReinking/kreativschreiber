@@ -33,13 +33,12 @@
           :with-route="true"
           :route-name="route('customer.chat.inbox.index', 'unread')"
         >
-          <badge-unread-chats :count="$page.props.userdata.unreadCustomerChats" />
+          <badge-unread-chats
+            :count="$page.props.userdata.unreadCustomerChats"
+          />
         </dropdown-link>
       </div>
-      <div
-        v-if="$page.props.userdata.is_admin"
-        class="hidden lg:block"
-      >
+      <div v-if="$page.props.userdata.is_admin" class="hidden lg:block">
         <!-- Application Dropdown -->
         <dropdown align="right" width="96">
           <template #trigger>
@@ -58,18 +57,24 @@
           </template>
         </dropdown>
       </div>
+
       <div>
         <dropdown align="right" width="96">
           <template #trigger>
             <dropdown-link v-if="$page.props.userdata.profile_photo_path">
               <img
                 class="h-8 w-8 rounded-full object-cover"
-                :src="$page.props.userdata.profile_photo_url"
-                :alt="$page.props.userdata.first_name + ' ' + $page.props.userdata.last_name"
+                :src="$page.props.userdata.profile_photo_path"
+                :alt="
+                  $page.props.userdata.first_name +
+                  ' ' +
+                  $page.props.userdata.last_name
+                "
               />
             </dropdown-link>
             <dropdown-link v-else :with-icon="true">
-              {{ $page.props.userdata.first_name }} {{ $page.props.userdata.last_name }}
+              {{ $page.props.userdata.first_name }}
+              {{ $page.props.userdata.last_name }}
             </dropdown-link>
           </template>
 
@@ -79,11 +84,14 @@
               Meine Daten
             </div>
 
-            <dropdown-link :route-name="route('customer.profile')" :with-route="true">
+            <dropdown-link
+              :route-name="route('customer.profile')"
+              :with-route="true"
+            >
               Persönliche Einstellungen
             </dropdown-link>
 
-             <dropdown-link
+            <dropdown-link
               :route-name="route('customer.api_tokens.index')"
               :with-route="true"
               v-if="$page.props.jetstream.hasApiFeatures"

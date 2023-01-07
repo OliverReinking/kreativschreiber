@@ -1,8 +1,20 @@
 <template>
   <section-form>
-    <template #title>Daten einer Person bzw. eines Unternehmens</template>
-    <template #description
-      >Hier kannst du alle Daten einer Person bzw. eines Unternehmens ändern
+    <template #title>
+      <span v-if="applicationName == $page.props.applications.app_admin"
+        >Daten einer Person bzw. eines Unternehmens</span
+      >
+      <span v-if="applicationName == $page.props.applications.app_customer"
+        >Deine Kundendaten</span
+      >
+    </template>
+    <template #description>
+      <span v-if="applicationName == $page.props.applications.app_admin"
+        >Hier kannst du alle Daten einer Person bzw. eines Unternehmens ändern
+      </span>
+      <span v-if="applicationName == $page.props.applications.app_customer"
+        >Hier kannst du alle deine Kundendaten ändern
+      </span>
       <!-- Loading -->
       <input-loading
         :loading="loading"
@@ -32,68 +44,77 @@
       </alert>
 
       <div v-if="!personCompany.is_deleted">
-        <input-subtitle>Daten</input-subtitle>
-        <input-group>
-          <input-container>
-            <input-label name="name" label="Unternehmensname"></input-label>
-            <input-element
-              type="text"
-              name="name"
-              v-model="form.name"
-              placeholder="Unternehmensname"
-              :required="true"
-              ref="name"
-            ></input-element>
-            <input-error :message="errors.name" />
-          </input-container>
-          <input-container>
-            <input-label name="street" label="Straße"></input-label>
-            <input-element
-              type="text"
-              name="street"
-              v-model="form.street"
-              placeholder="Straße"
-              :required="true"
-              ref="street"
-            ></input-element>
-            <input-error :message="errors.street" />
-          </input-container>
-          <input-container>
-            <input-label name="country_id" label="Land"></input-label>
-            <input-select
-              v-model="form.country_id"
-              :options="countries"
-              ref="country_id"
-            ></input-select>
-            <input-error :message="errors.country_id" />
-          </input-container>
-          <input-container>
-            <input-label name="postcode" label="Postleitzahl"></input-label>
-            <input-element
-              type="text"
-              name="postcode"
-              v-model="form.postcode"
-              placeholder="Postleitzahl"
-              :required="true"
-              ref="postcode"
-            ></input-element>
-            <input-error :message="errors.postcode" />
-          </input-container>
-          <input-container>
-            <input-label name="city" label="Stadt"></input-label>
-            <input-element
-              type="text"
-              name="city"
-              v-model="form.city"
-              placeholder="Stadt"
-              :required="true"
-              ref="city"
-            ></input-element>
-            <input-error :message="errors.city" />
-          </input-container>
-        </input-group>
+        <div v-if="applicationName == $page.props.applications.app_admin">
+          <input-subtitle>Daten</input-subtitle>
+          <input-group>
+            <input-container>
+              <input-label name="name" label="Unternehmensname"></input-label>
+              <input-element
+                type="text"
+                name="name"
+                v-model="form.name"
+                placeholder="Unternehmensname"
+                :required="true"
+                ref="name"
+              ></input-element>
+              <input-error :message="errors.name" />
+            </input-container>
+            <input-container>
+              <input-label name="street" label="Straße"></input-label>
+              <input-element
+                type="text"
+                name="street"
+                v-model="form.street"
+                placeholder="Straße"
+                :required="true"
+                ref="street"
+              ></input-element>
+              <input-error :message="errors.street" />
+            </input-container>
+            <input-container>
+              <input-label name="country_id" label="Land"></input-label>
+              <input-select
+                v-model="form.country_id"
+                :options="countries"
+                ref="country_id"
+              ></input-select>
+              <input-error :message="errors.country_id" />
+            </input-container>
+            <input-container>
+              <input-label name="postcode" label="Postleitzahl"></input-label>
+              <input-element
+                type="text"
+                name="postcode"
+                v-model="form.postcode"
+                placeholder="Postleitzahl"
+                :required="true"
+                ref="postcode"
+              ></input-element>
+              <input-error :message="errors.postcode" />
+            </input-container>
+            <input-container>
+              <input-label name="city" label="Stadt"></input-label>
+              <input-element
+                type="text"
+                name="city"
+                v-model="form.city"
+                placeholder="Stadt"
+                :required="true"
+                ref="city"
+              ></input-element>
+              <input-error :message="errors.city" />
+            </input-container>
+          </input-group>
+        </div>
 
-        <input-subtitle>Kontaktperson</input-subtitle>
+        <input-subtitle>
+          <span v-if="applicationName == $page.props.applications.app_admin"
+            >Kontaktperson</span
+          >
+          <span v-if="applicationName == $page.props.applications.app_customer"
+            >Name und Kontaktdaten</span
+          >
+        </input-subtitle>
         <input-group>
           <input-container>
             <input-label
@@ -266,17 +287,26 @@
             Daten ändern
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
+        <smooth-scroll
+          href="#app-layout-start"
+          v-if="applicationName == $page.props.applications.app_admin"
+        >
           <input-button type="button" @click.prevent="creditPoints(500)">
             500 Punkte gutschreiben
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
+        <smooth-scroll
+          href="#app-layout-start"
+          v-if="applicationName == $page.props.applications.app_admin"
+        >
           <input-button type="button" @click.prevent="creditPoints(1000)">
             1.000 Punkte gutschreiben
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
+        <smooth-scroll
+          href="#app-layout-start"
+          v-if="applicationName == $page.props.applications.app_admin"
+        >
           <input-button type="button" @click.prevent="creditPoints(2000)">
             2.000 Punkte gutschreiben
           </input-button>
@@ -432,10 +462,6 @@ export default {
       if (this.applicationName == this.$page.props.applications.app_admin) {
         routePersonCompanyUpdate = "admin.person_company.update";
       } else if (
-        this.applicationName == this.$page.props.applications.app_employee
-      ) {
-        routePersonCompanyUpdate = "employee.person_company.update";
-      } else if (
         this.applicationName == this.$page.props.applications.app_customer
       ) {
         routePersonCompanyUpdate = "customer.person_company.update";
@@ -475,6 +501,7 @@ export default {
           this.personCompany.id,
           points,
         ]),
+        {},
         {
           onSuccess: () => {
             this.loading = false;

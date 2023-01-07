@@ -20,6 +20,40 @@ use Inertia\Inertia;
 
 class BookingController extends Controller
 {
+    // =================
+    // APPLICATION ADMIN
+    // =================
+    public function admin_booking_index()
+    {
+        $bookings = Booking::select(
+            'bookings.id as id',
+            'booking_types.name as bookingtype_name',
+            'bookings.booking_date as booking_date',
+            'bookings.points as points',
+        )
+            ->leftJoin('booking_types', 'booking_types.id', '=', 'bookings.booking_type_id')
+            ->orderBy('bookings.id', 'desc')
+            ->filterCustomer(Request::only('search'))
+            ->paginate()
+            ->withQueryString();
+        //
+        return Inertia::render('Application/Admin/BookingList', [
+            'filters' => Request::all('search'),
+            'bookings' => $bookings,
+        ]);
+    }
+    //
+    public function admin_booking_show(Booking $booking)
+    {
+        $booking->booking_type;
+        $booking->content;
+        $booking->invoice;
+        //
+        return Inertia::render('Application/Admin/BookingShow', [
+            'booking' => $booking,
+        ]);
+    }
+
     // ====================
     // APPLICATION CUSTOMER
     // ====================

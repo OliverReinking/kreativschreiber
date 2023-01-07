@@ -75,7 +75,7 @@ class AdminSeeder extends Seeder
             'last_name' => 'Reinking',
             'email' => 'oliver@kreativschreiber.com',
             'email_verified_at' => Carbon::now(),
-            'password' => Hash::make('12345678'),
+            'password' => Hash::make('kreativOllie_2023'),
             'is_admin' => true,
             'is_customer' => true,
         ]);
@@ -83,10 +83,12 @@ class AdminSeeder extends Seeder
         $person_company = PersonCompany::factory()->create([
             'is_natural_person' => false,
             'name' => 'KreativSchreiber, eine Web-Anwendung von Oliver Reinking',
+            'country_id' => Country::COUNTRY_GERMANY,
             'contactperson_salutation_id' => Salutation::SALUTATION_MALE,
-            'contactperson_last_name' => 'Oliver',
-            'contactperson_first_name' => 'Reinking',
+            'contactperson_first_name' => 'Oliver',
+            'contactperson_last_name' => 'Reinking',
             'contactperson_email' => 'oliver@kreativschreiber.com',
+            'billing_country_id' => Country::COUNTRY_GERMANY,
         ]);
         // Create Administration
         Administration::create([
@@ -915,11 +917,13 @@ class TestData extends Seeder
                 $person_company = PersonCompany::factory()->create([
                     'is_natural_person' => false,
                     'name' => $user->full_name,
+                    'country_id' => Country::COUNTRY_GERMANY,
                     'contactperson_salutation_id' => Salutation::SALUTATION_DIVERS,
                     'contactperson_last_name' => $user->last_name,
                     'contactperson_first_name' => $user->first_name,
                     'contactperson_phone' => null,
                     'contactperson_email' => $user->email,
+                    'billing_country_id' => Country::COUNTRY_GERMANY,
                 ]);
                 //
                 $user->is_customer = true;

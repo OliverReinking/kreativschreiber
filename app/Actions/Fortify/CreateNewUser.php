@@ -31,19 +31,6 @@ class CreateNewUser implements CreatesNewUsers
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => $this->passwordRules(),
             'terms' => Jetstream::hasTermsAndPrivacyPolicyFeature() ? ['accepted', 'required'] : '',
-            'company_name' => ['required', 'string', 'max:100'],
-            'company_street' => ['required', 'string', 'max:100'],
-            'company_postcode' => ['required', 'string', 'max:20'],
-            'company_city' => ['required', 'string', 'max:100'],
-        ], [
-            'company_name.required' => 'Bitte gebe den Unternehmensnamen ein.',
-            'company_name.max' => 'Bitte gebe für den Unternehmensnamen maximal 100 Zeichen ein.',
-            'company_street.required' => 'Bitte gebe die Straße de Unternehmens ein.',
-            'company_street.max' => 'Bitte gebe für die Straße des Unternehmens maximal 100 Zeichen ein.',
-            'company_postcode.required' => 'Bitte gebe die Postleiztahl des Unternehmens ein.',
-            'company_postcode.max' => 'Bitte gebe für die Postleitzahl des Unternehmens maximal 20 Zeichen ein.',
-            'company_city.required' => 'Bitte gebe die Stadt des Unternehmens ein.',
-            'company_city.max' => 'Bitte gebe für die Stadt des Unternehmens maximal 100 Zeichen ein.',
         ])->validate();
 
         return DB::transaction(function () use ($input) {
@@ -56,20 +43,12 @@ class CreateNewUser implements CreatesNewUsers
             ]), function (User $user) use ($input) {
                 // create person_companies
                 $person_company = PersonCompany::create([
-                    'name' => $input['company_name'],
-                    'street' => $input['company_street'],
                     'country_id' => Country::COUNTRY_GERMANY,
-                    'postcode' => $input['company_postcode'],
-                    'city' => $input['company_city'],
                     'contactperson_salutation_id' => Salutation::SALUTATION_DIVERS,
                     'contactperson_last_name' => $user->first_name,
                     'contactperson_first_name' => $user->last_name,
                     'contactperson_email' => $user->email,
-                    'billing_address' => $input['company_name'],
-                    'billing_street' => $input['company_street'],
                     'billing_country_id' => Country::COUNTRY_GERMANY,
-                    'billing_postcode' => $input['company_postcode'],
-                    'billing_city' => $input['company_city'],
                 ]);
                 // create customers
                 Customer::create([

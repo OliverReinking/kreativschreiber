@@ -183,10 +183,6 @@ export default {
       if (this.applicationName == this.$page.props.applications.app_admin) {
         routeInvitationCreate = "admin.teammember.update";
       } else if (
-        this.applicationName == this.$page.props.applications.app_employee
-      ) {
-        routeInvitationCreate = "employee.teammember.update";
-      } else if (
         this.applicationName == this.$page.props.applications.app_customer
       ) {
         routeInvitationCreate = "customer.teammember.update";
@@ -222,10 +218,6 @@ export default {
       //
       if (this.applicationName == this.$page.props.applications.app_admin) {
         routeTeammemberRemove = "admin.teammember.delete";
-      } else if (
-        this.applicationName == this.$page.props.applications.app_employee
-      ) {
-        routeTeammemberRemove = "employee.teammember.delete";
       } else if (
         this.applicationName == this.$page.props.applications.app_customer
       ) {

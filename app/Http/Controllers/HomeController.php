@@ -16,12 +16,10 @@ use App\Models\Administration;
 use App\Models\NewsletterMember;
 use Laravel\Jetstream\Jetstream;
 use Illuminate\Support\Facades\Log;
-use App\Jobs\SendMailJobApplication;
 use Illuminate\Support\Facades\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\RegisterUserRequest;
-use App\Http\Requests\RequestJobApplication;
 use App\Http\Requests\RequestWebinarRegister;
 use App\Jobs\SendMailNewsletterWasSubscribed;
 use App\Http\Requests\RequestNewsletterRegister;
@@ -132,90 +130,6 @@ class HomeController extends Controller
         return Inertia::render('Application/Homepage/Terms', [
             'terms' => $terms,
         ]);
-    }
-
-    public function home_job_application()
-    {
-        return Inertia::render('Application/Homepage/JobApplication');
-    }
-
-    public function home_job_application_send(RequestJobApplication $request)
-    {
-        // Ermittle die job_application_values
-        $job_application_values = collect();
-        //
-        $job_application_values->first_name = $request->first_name;
-        $job_application_values->last_name = $request->last_name;
-        $job_application_values->email = $request->email;
-        $job_application_values->phone = $request->phone;
-        //
-        $job_application_values->gender = "weiblich";
-        if ($request->gender == "male") {
-            $job_application_values->gender = "männlich";
-        }
-        //
-        $job_application_values->continent = trans($request->continent);
-        //
-        //Log::info('home_job_application_send', [
-        //    'request->continent' => $request->continent,
-        //    'request->languages' => $request->languages
-        //]);
-        //
-        $count_languages = 0;
-        foreach ($request->languages as $key => $value) {
-            //
-            //Log::info('home_job_application_send', [
-            //    'key' => $key,
-            //    'value' => $value,
-            //]);
-            //
-            if ($value == "true") {
-                $count_languages += 1;
-            }
-        }
-        //
-        if ($count_languages < 2) {
-            return Redirect::route('job_application')
-                ->with([
-                    'error' => 'Die Bewerbungsdaten konnten nicht verarbeitet werden.
-                  Du solltest mindestens zwei Sprachen beherrschen.'
-                ]);
-        }
-        //
-        if (Request::file('fileCurriculumVitae')) {
-            //
-            $file = Request::file('fileCurriculumVitae');
-            //
-            $mimetype = $file->getMimeType();
-            //
-            //Log::info('home_job_application_send', [
-            //    'mimetype' => $mimetype
-            //]);
-            //
-            if ($mimetype !== 'application/pdf') {
-                return Redirect::route('job_application')
-                    ->with([
-                        'error' => 'Die Bewerbungsdaten konnten nicht verarbeitet werden.
-                          Der Lebenslauf muss im PDF-Format hochgeladen werden.'
-                    ]);
-            }
-            //
-            $FileName = Str::random(60) . '.pdf';
-            //
-            Storage::disk('lebenslauf')->put(
-                $FileName,
-                file_get_contents($file),
-                'private'
-            );
-        }
-        //
-        dispatch(new SendMailJobApplication($job_application_values));
-        //
-        return Redirect::route('job_application')
-            ->with([
-                'success' => 'Die Bewerbungsdaten wurden erfolgreich übermittelt.
-                          Wir werden uns schnellstmöglich mit Dir in Verbindung setzen.'
-            ]);
     }
 
     public function home_blog_index()

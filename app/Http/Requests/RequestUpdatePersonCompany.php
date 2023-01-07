@@ -19,11 +19,11 @@ class RequestUpdatePersonCompany extends FormRequest
             $rules['name'] = ['required', 'max:255'];
         }
 
-        $rules['name'] = ['required', 'max:100'];
-        $rules['street'] = ['required', 'max:100'];
-        $rules['country_id'] = ['required', 'exists:countries,id'];
-        $rules['postcode'] = ['required', 'max:100'];
-        $rules['city'] = ['required', 'max:100'];
+        $rules['name'] = ['nullable', 'max:100'];
+        $rules['street'] = ['nullable', 'max:100'];
+        $rules['country_id'] = ['nullable', 'exists:countries,id'];
+        $rules['postcode'] = ['nullable', 'max:100'];
+        $rules['city'] = ['nullable', 'max:100'];
         $rules['contactperson_salutation_id'] = ['nullable', 'exists:salutations,id'];
         $rules['contactperson_first_name'] = ['nullable', 'max:100'];
         $rules['contactperson_last_name'] = ['nullable', 'max:100'];

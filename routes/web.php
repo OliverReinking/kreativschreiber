@@ -116,6 +116,15 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
             '/admin/dashboard',
             [DashboardAdminController::class, 'admin_index']
         )->name('admin.dashboard');
+        // ========
+        // Bookings
+        // ========
+        // Liste Bookings
+        Route::get('/admin/booking/index', [BookingController::class, 'admin_booking_index'])
+            ->name('admin.booking.index')->middleware('remember');
+        // Anzeige Booking
+        Route::get('/admin/booking/show/{booking}', [BookingController::class, 'admin_booking_show'])
+            ->name('admin.booking.show');
         // ---------------
         // PersonCompanies
         // ---------------

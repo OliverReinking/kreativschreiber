@@ -111,9 +111,6 @@ export default {
       if (this.applicationName == this.$page.props.applications.app_admin) {
         return "admin.dashboard";
       }
-      if (this.applicationName == this.$page.props.applications.app_employee) {
-        return "employee.dashboard";
-      }
       if (this.applicationName == this.$page.props.applications.app_customer) {
         return "customer.dashboard";
       }

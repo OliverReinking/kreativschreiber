@@ -11,6 +11,22 @@
 
     <section class="mt-8">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
+
+         <navigation-card title="Liste der KreativSchreiber-Transaktionen" :buttonTwo="false">
+          <template #icon> <icon-building-office /> </template>
+          <template #description>
+            Hier kannst du eine Liste KreativSchreiber-Transaktionen anzeigen
+          </template>
+          <template #buttonOne>
+            <Link
+              :href="route('admin.booking.index')"
+              class="flex items-center"
+            >
+              <icon-card-list class="inline-block h-5 w-5 mr-2" />Liste
+            </Link>
+          </template>
+        </navigation-card>
+
         <navigation-card title="Liste der Rechnungen" :buttonTwo="false">
           <template #icon> <icon-credit-card /> </template>
           <template #description>

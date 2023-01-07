@@ -17,10 +17,6 @@ const form = useForm({
   password: "",
   password_confirmation: "",
   terms: false,
-  company_name: "",
-  company_street: "",
-  company_postcode: "",
-  company_city: "",
 });
 
 const submit = () => {
@@ -105,57 +101,6 @@ const submit = () => {
           class="mt-2"
           :message="form.errors.password_confirmation"
         />
-      </div>
-
-      <div class="mt-4">
-        <JetRegisterSubtitle title="Daten zum Unternehmen"
-          ></JetRegisterSubtitle
-        >
-      </div>
-
-      <div class="mt-4">
-        <JetLabel for="company_name" :value="$t('Company Name')" />
-        <JetInput
-          id="company_name"
-          v-model="form.company_name"
-          type="text"
-          class="mt-1 block w-full"
-          required
-        />
-        <JetInputError class="mt-2" :message="form.errors.company_name" />
-      </div>
-      <div class="mt-4">
-        <JetLabel for="company_street" :value="$t('Street')" />
-        <JetInput
-          id="company_street"
-          v-model="form.company_street"
-          type="text"
-          class="mt-1 block w-full"
-          required
-        />
-        <JetInputError class="mt-2" :message="form.errors.company_street" />
-      </div>
-      <div class="mt-4">
-        <JetLabel for="company_postcode" :value="$t('Postcode')" />
-        <JetInput
-          id="company_postcode"
-          v-model="form.company_postcode"
-          type="text"
-          class="mt-1 block w-full"
-          required
-        />
-        <JetInputError class="mt-2" :message="form.errors.company_postcode" />
-      </div>
-      <div class="mt-4">
-        <JetLabel for="company_city" :value="$t('City')" />
-        <JetInput
-          id="company_city"
-          v-model="form.company_city"
-          type="text"
-          class="mt-1 block w-full"
-          required
-        />
-        <JetInputError class="mt-2" :message="form.errors.company_city" />
       </div>
 
       <div
