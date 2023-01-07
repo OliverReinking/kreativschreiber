@@ -12,7 +12,20 @@
     "
   >
     <div class="p-6 space-y-2">
-      <h3 class="text-xl font-semibold sm:text-2xl font-title">
+      <img
+        :src="webinar.url"
+        :alt="webinar.name"
+        class="
+          object-cover
+          w-full
+          h-64
+          sm:h-96
+          rounded
+          lg:col-span-7
+          bg-layout-500
+        "
+      />
+      <h3 class="pt-4 text-xl font-semibold sm:text-2xl font-title">
         {{ webinar.title }}
       </h3>
       <div class="text-base text-layout-600 dark:text-layout-300 py-2">

@@ -128,17 +128,65 @@ class BookingController extends Controller
                     'error' => $error,
                 ]);
         }
+        // validiere die Attribute billing_* in person_companies
+        if (!$person_company->billing_address) {
+            $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
+            $error .= "Für die Erstellung der Rechnung benötigen wir eine Eingabe im Feld <b>Dein Name bzw. der Name des Unternehmens</b> in der Rubrik <b>Rechnungsanschrift</b>.<br />";
+            $error .= "Klicke in der linken Navigationsspalte auf <b>Organisation</b> und dann auf den Menüpunkt <b>Kundendaten</b>.<br />";
+            $error .= "Hier kannst du jetzt deine Rechnungsanschrift hinterlegen.<br />";
+            //
+            return Redirect::route('customer.dashboard')
+                ->with([
+                    'error' => $error,
+                ]);
+        }
+        //
+        if (!$person_company->billing_street) {
+            $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
+            $error .= "Für die Erstellung der Rechnung benötigen wir eine Eingabe im Feld <b>Straße</b> in der Rubrik <b>Rechnungsanschrift</b>.<br />";
+            $error .= "Klicke in der linken Navigationsspalte auf <b>Organisation</b> und dann auf den Menüpunkt <b>Kundendaten</b>.<br />";
+            $error .= "Hier kannst du jetzt deine Rechnungsanschrift hinterlegen.<br />";
+            //
+            return Redirect::route('customer.dashboard')
+                ->with([
+                    'error' => $error,
+                ]);
+        }
+        //
+        if (!$person_company->billing_postcode) {
+            $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
+            $error .= "Für die Erstellung der Rechnung benötigen wir eine Eingabe im Feld <b>Postleitzahl</b> in der Rubrik <b>Rechnungsanschrift</b>.<br />";
+            $error .= "Klicke in der linken Navigationsspalte auf <b>Organisation</b> und dann auf den Menüpunkt <b>Kundendaten</b>.<br />";
+            $error .= "Hier kannst du jetzt deine Rechnungsanschrift hinterlegen.<br />";
+            //
+            return Redirect::route('customer.dashboard')
+                ->with([
+                    'error' => $error,
+                ]);
+        }
+        //
+        if (!$person_company->billing_city) {
+            $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
+            $error .= "Für die Erstellung der Rechnung benötigen wir eine Eingabe im Feld <b>Stadt</b> in der Rubrik <b>Rechnungsanschrift</b>.<br />";
+            $error .= "Klicke in der linken Navigationsspalte auf <b>Organisation</b> und dann auf den Menüpunkt <b>Kundendaten</b>.<br />";
+            $error .= "Hier kannst du jetzt deine Rechnungsanschrift hinterlegen.<br />";
+            //
+            return Redirect::route('customer.dashboard')
+                ->with([
+                    'error' => $error,
+                ]);
+        }
         // prüfe, ob für den Kunden unbezahlte Rechnungen vorliegen
         $unpaid_invoices = Invoice::
-        join(
+            join(
             'invoice_statuses',
             'invoice_statuses.id',
             '=',
             'invoices.invoice_status_id'
         )
-        ->where('person_company_id', '=', $person_company->id)
-        ->where('is_paid', '=', false)
-        ->count();
+            ->where('person_company_id', '=', $person_company->id)
+            ->where('is_paid', '=', false)
+            ->count();
         //
         if ($unpaid_invoices > 0) {
             $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
@@ -245,10 +293,10 @@ class BookingController extends Controller
             Chat::Chat_ohne_Mailbenachrichtung
         );
         //
-        $success = "Ich möchte mich herzlich für deinen Kauf bei mir bedanken.";
+        $success = "Ich möchte mich herzlich für deinen Kauf bei mir bedanken.<br />";
         $success .= "Ich hoffe, dass du mit der Anwendung KreativSchreiber zufrieden bist. Danke schön!<br />";
         $success .= "Ich habe noch folgende Schritte durchgeführt:<br />";
-        $success .= "- Rechnung erstellt. Diese findest du im Menüpunkt Organisation.<br />";
+        $success .= "- Rechnung erstellt. Diese findest du im Menüpunkt Organisation<br />";
         $success .= "- Nachricht erstellt. Diese findest du im Posteingang<br />";
         $success .= "- dein Punktekonto aufgefüllt<br />";
         //

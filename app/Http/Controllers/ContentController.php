@@ -35,7 +35,7 @@ class ContentController extends Controller
             ->join('content_types', 'content_types.id', '=', 'contents.content_type_id')
             ->filterContent(Request::only('search'))
             ->where('contents.person_company_id', '=', $customer_id)
-        //
+            //
             ->where(function ($q) use ($filter_read) {
                 if ($filter_read == "advertising") {
                     $q->where('contents.content_type_id', '=', ContentType::CONTENT_TYPE_WERBETEXT);
@@ -44,7 +44,7 @@ class ContentController extends Controller
                     $q->where('contents.content_type_id', '=', ContentType::CONTENT_TYPE_BLOGTEXT);
                 }
             })
-        //
+            //
             ->orderBy('creation_date', 'desc')
             ->paginate(10)
             ->withQueryString();

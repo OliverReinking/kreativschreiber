@@ -1,17 +1,18 @@
 <template>
-  <Link
+  <a
     :href="routeName"
+    :target="target"
     class="flex items-center px-2 py-2 mt-2 transition duration-1000 transform"
     :class="[route().current(routeName) ? activeClass : inactiveClass]"
   >
     <component v-bind:is="icon" class="w-5 h-5 mr-2" />
     <span class="text-sm mx-2">{{ label }}</span>
-  </Link>
+  </a>
 </template>
 <script>
 import { defineComponent, ref } from "vue";
-import { Link } from "@inertiajs/inertia-vue3";
 
+import IconArrowRight from "@/Pages/Components/Icons/ArrowRight.vue";
 import IconArrowLeftOnRectangle from "@/Pages/Components/Icons/ArrowLeftOnRectangle.vue";
 import IconArrowRightOnRectangle from "@/Pages/Components/Icons/ArrowRightOnRectangle.vue";
 import IconWindow from "@/Pages/Components/Icons/Window.vue";
@@ -32,7 +33,7 @@ export default defineComponent({
   name: "Component_SidebarLink",
   //
   components: {
-    Link,
+    IconArrowRight,
     IconArrowLeftOnRectangle,
     IconArrowRightOnRectangle,
     IconWindow,
@@ -62,6 +63,10 @@ export default defineComponent({
     routeName: {
       type: String,
       required: true,
+    },
+    target: {
+      type: String,
+      default: null,
     },
   },
 

@@ -5,7 +5,7 @@
         :application-name="$page.props.applications.app_admin"
         current="Webinaranmeldung"
         :breadcrumbs="{
-          'Übersicht Content': route('admin.content.index'),
+          'Übersicht Content': route('admin.content.dashboard'),
           'Liste der Webinaranmeldungen': route('admin.webinarorder.index'),
           'Webinar': route('admin.webinar.edit', webinar_order.webinar.id),
         }"

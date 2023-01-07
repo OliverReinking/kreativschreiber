@@ -52,22 +52,27 @@
           :route-name="route('admin.dashboard')"
           label="Dashboard"
         ></sidebar-link>
-        <sidebar-link
-          icon="icon-users"
-          :route-name="route('admin.user.index')"
-          label="Anwender"
-        ></sidebar-link>
-        <sidebar-link
-          icon="icon-collection"
-          :route-name="route('admin.processes')"
-          label="Prozesse"
-        ></sidebar-link>
+
+        <sidebar-dropdown icon="icon-newspaper" label="Akquisition">
+          <template #links>
+            <sidebar-link
+              icon="icon-newspaper"
+              :route-name="route('admin.acquisition.dashboard')"
+              label="Übersicht"
+            ></sidebar-link>
+             <sidebar-link
+              icon="icon-newspaper"
+              :route-name="route('admin.acquisition.index')"
+              label="Akquisitionen"
+            ></sidebar-link>
+          </template>
+        </sidebar-dropdown>
 
         <sidebar-dropdown icon="icon-newspaper" label="Content">
           <template #links>
             <sidebar-link
               icon="icon-newspaper"
-              :route-name="route('admin.content.index')"
+              :route-name="route('admin.content.dashboard')"
               label="Übersicht"
             ></sidebar-link>
             <sidebar-link
@@ -93,16 +98,6 @@
           </template>
         </sidebar-dropdown>
 
-        <sidebar-link
-          icon="icon-chart-pie"
-          :route-name="route('admin.statistics')"
-          label="Statistik"
-        ></sidebar-link>
-        <sidebar-link
-          icon="icon-document-text"
-          :route-name="route('admin.documentation')"
-          label="Dokumentation"
-        ></sidebar-link>
         <sidebar-link
           icon="icon-arrow-left-on-rectangle"
           :route-name="route('admin.chat.inbox.index')"

@@ -5,7 +5,7 @@
         :application-name="$page.props.applications.app_admin"
         :current="webinar.id > 0 ? 'Ändere Webinar' : 'Webinar erstellen'"
         :breadcrumbs="{
-          'Übersicht Content': route('admin.content.index'),
+          'Übersicht Content': route('admin.content.dashboard'),
           'Liste der Webinare': route('admin.webinar.index'),
         }"
       ></breadcrumb>

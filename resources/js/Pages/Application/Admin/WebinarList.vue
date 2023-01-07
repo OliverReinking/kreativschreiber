@@ -5,7 +5,7 @@
         :application-name="$page.props.applications.app_admin"
         current="Liste der Webinare"
         :breadcrumbs="{
-          'Übersicht Content': route('admin.content.index'),
+          'Übersicht Content': route('admin.content.dashboard'),
         }"
       ></breadcrumb>
     </template>

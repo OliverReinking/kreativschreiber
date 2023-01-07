@@ -120,8 +120,6 @@
 <script>
 import DisplayTitle from "@/Pages/Components/Content/DisplayTitle.vue";
 import DisplayRow from "@/Pages/Components/Content/DisplayRow.vue";
-import DisplayDate from "@/Pages/Components/Content/DisplayDate.vue";
-import DisplayYesOrNo from "@/Pages/Components/Content/DisplayYesOrNo.vue";
 
 import Alert from "@/Pages/Components/Content/Alert.vue";
 
@@ -131,8 +129,6 @@ export default {
   components: {
     DisplayTitle,
     DisplayRow,
-    DisplayDate,
-    DisplayYesOrNo,
     Alert,
   },
 

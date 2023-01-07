@@ -34,7 +34,7 @@ class RequestUpdatePersonCompany extends FormRequest
         $rules['billing_address_line_2'] = ['nullable', 'max:100'];
         $rules['billing_street'] = ['nullable', 'max:100'];
         $rules['billing_country_id'] = ['nullable', 'exists:countries,id'];
-        $rules['billing_postcode'] = ['nullable', 'max:100'];
+        $rules['billing_postcode'] = ['nullable', 'max:20'];
         $rules['billing_city'] = ['nullable', 'max:100'];
 
         return $rules;
@@ -62,6 +62,12 @@ class RequestUpdatePersonCompany extends FormRequest
             'contactperson_email.email'             => 'Bitte gebe eine gültige Mailadresse der Kontaktperson ein.',
             'contactperson_email.required'          => 'Bitte gebe die Mailadresse der Kontaktperson ein.',
             'contactperson_email.max'               => 'Für die Eingabe der Mailadresse der Kontaktperson stehen maximal 100 Zeichen zur Verfügung.',
+            //
+            'billing_address.max'                  => 'Für die Eingabe Rechnungsanschrift: Dein Name bzw. der Name des Unternehmens stehen maximal 100 Zeichen zur Verfügung.',
+            'billing_address_line_2.max'           => 'Für die Eingabe Rechnungsanschrift: Unternehmensbezeichnung (Zeile 2) stehen maximal 100 Zeichen zur Verfügung.',
+            'billing_street.max'                   => 'Für die Eingabe Rechnungsanschrift: Straße stehen maximal 100 Zeichen zur Verfügung.',
+            'billing_postcode.max'                 => 'Für die Eingabe Rechnungsanschrift: Postleitzahl stehen maximal 20 Zeichen zur Verfügung.',
+            'billing_city.max'                     => 'Für die Eingabe Rechnungsanschrift: Stadt stehen maximal 100 Zeichen zur Verfügung.',
         ];
     }
 }

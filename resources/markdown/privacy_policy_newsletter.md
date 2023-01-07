@@ -28,7 +28,7 @@ Selbstverständlich haben Sie das Recht, jederzeit die von Ihnen erteilte Einwil
 ## Deine Rechte
 Du hast das Recht, jederzeit Auskunft über die von uns über dich gespeicherten Daten zu verlangen. Du kannst deine Einwilligung zur Verarbeitung deiner Daten jederzeit widerrufen und deine Daten berichtigen oder löschen lassen.
 
-Bitte wende dich dazu an uns unter der E-Mail-Adresse oliver[at]codingjungle.de.
+Bitte wende dich dazu an uns unter der E-Mail-Adresse oliver[at]kreativschreiber.com.
 
 ## Änderungen der Datenschutzerklärung
 Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit unter Beachtung der geltenden Datenschutzvorschriften zu ändern. Bitte beachte daher regelmäßig die aktuelle Fassung der Datenschutzerklärung.

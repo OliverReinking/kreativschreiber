@@ -11,14 +11,11 @@
             <tr>
                 <td style="vertical-align:top;" width="70%">
                     <div>
-                        Firma
-                        <br>
                         {{ $invoice->billing_address }}
-                        <br>
-                        {{ $invoice->billing_address_line_2 }}
-                        <br>
-                        {{ $invoice->salutation->name }} {{ $invoice->contactperson_first_name }}
-                        {{ $invoice->contactperson_last_name }}
+                        @if ($invoice->billing_address_line_2)
+                            <br>
+                            {{ $invoice->billing_address_line_2 }}
+                        @endif
                         <br>
                         {{ $invoice->billing_street }}
                         <br>
@@ -119,10 +116,12 @@
                             <th style="vertical-align:top; text-align:left">Beschreibung</th>
                             <th style="vertical-align:top; text-align:left">Menge</th>
                             <th style="vertical-align:top; text-align:left">Leistungsdatum</th>
-                            <th style="vertical-align:top; text-align:right">Nettopreis in {{ $invoice->currency->symbol }}</th>
+                            <th style="vertical-align:top; text-align:right">Nettopreis in {{ $invoice->currency->symbol }}
+                            </th>
                             <th style="vertical-align:top; text-align:right">Mwst.Satz in %</th>
                             <th style="vertical-align:top; text-align:right">MwSt. in {{ $invoice->currency->symbol }}</th>
-                            <th style="vertical-align:top; text-align:right">Bruttopreis in {{ $invoice->currency->symbol }}</th>
+                            <th style="vertical-align:top; text-align:right">Bruttopreis in
+                                {{ $invoice->currency->symbol }}</th>
                         </tr>
                         @foreach ($invoice_items as $item)
                             <tr>

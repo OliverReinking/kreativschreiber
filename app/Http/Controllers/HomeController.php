@@ -31,6 +31,8 @@ class HomeController extends Controller
 {
     public function home_index()
     {
+        $Zeitpunkt = Carbon::now();
+        //
         $blog = Blog::select(
             'blogs.id as id',
             'blogs.blog_date as blog_date',
@@ -49,9 +51,10 @@ class HomeController extends Controller
             //
             ->orderBy('blogs.blog_date', 'desc')
             ->orderBy('blogs.id', 'desc')
+            //
+            ->whereDate('blog_date', '<=', $Zeitpunkt)
+            //
             ->first();
-        //
-        $Zeitpunkt = Carbon::now();
         //
         $webinar = Webinar::select(
             'webinars.id as id',
@@ -217,6 +220,8 @@ class HomeController extends Controller
 
     public function home_blog_index()
     {
+        $Zeitpunkt = Carbon::now();
+        //
         $blogs = Blog::select(
             'blogs.id as id',
             'blogs.blog_date as blog_date',
@@ -236,6 +241,9 @@ class HomeController extends Controller
             ->filterBlog(Request::only('search'))
             ->orderBy('blogs.blog_date', 'desc')
             ->orderBy('blogs.id', 'desc')
+            //
+            ->whereDate('blog_date', '<=', $Zeitpunkt)
+            //
             ->paginate(100)
             ->withQueryString();
         //

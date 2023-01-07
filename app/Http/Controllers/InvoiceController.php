@@ -30,7 +30,8 @@ class InvoiceController extends Controller
             'invoice_statuses.name as invoice_status_name',
             'invoice_types.name as invoice_type_name',
             'person_companies.name as company_name',
-            'person_companies.contactperson_email as company_email'
+            'person_companies.contactperson_email as company_email',
+            'currencies.name as currency_name',
         )
             ->join(
                 'person_companies',
@@ -49,6 +50,12 @@ class InvoiceController extends Controller
                 'invoice_types.id',
                 '=',
                 'invoices.invoice_type_id'
+            )
+            ->join(
+                'currencies',
+                'currencies.id',
+                '=',
+                'invoices.currency_id'
             )
             //
             ->where(function ($q) use ($filter_value) {
@@ -288,7 +295,8 @@ class InvoiceController extends Controller
             'invoice_statuses.name as invoice_status_name',
             'invoice_types.name as invoice_type_name',
             'person_companies.name as company_name',
-            'person_companies.contactperson_email as company_email'
+            'person_companies.contactperson_email as company_email',
+            'currencies.name as currency_name',
         )
             ->join(
                 'person_companies',
@@ -307,6 +315,12 @@ class InvoiceController extends Controller
                 'invoice_types.id',
                 '=',
                 'invoices.invoice_type_id'
+            )
+            ->join(
+                'currencies',
+                'currencies.id',
+                '=',
+                'invoices.currency_id'
             )
             ->where('invoices.person_company_id', '=', $customer_id)
             ->filterInvoiceCustomer(Request::only('search'))

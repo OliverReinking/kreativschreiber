@@ -87,4 +87,30 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->belongsTo('App\Models\Customer', 'customer_id', 'customer_id');
     }
+
+    protected static function deleteUserAdmin(int $admin_id)
+    {
+        $admins = User::where('is_admin', '=', true)
+            ->where('admin_id', '=', $admin_id)
+            ->get();
+        //
+        foreach ($admins as $admin) {
+            $admin->is_admin = false;
+            $admin->admin_id = null;
+            $admin->save();
+        }
+    }
+
+    protected static function deleteUserCustomer(int $customer_id)
+    {
+        $customers = User::where('is_customer', '=', true)
+            ->where('customer_id', '=', $customer_id)
+            ->get();
+        //
+        foreach ($customers as $customer) {
+            $customer->is_customer = false;
+            $customer->customer_id = null;
+            $customer->save();
+        }
+    }
 }

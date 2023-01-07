@@ -9,7 +9,7 @@
       from-sunprimary-light
       via-sunprimary
       to-sunprimary-dark
-      hover:bg-gradient-to-br
+      hover:bg-gradient-to-t
       focus:ring-4 focus:ring-sunprimary-lighter
       dark:focus:ring-sunprimary-darker
       font-medium
@@ -20,7 +20,7 @@
       text-center
     "
   >
-    <Link :href="route('register')"> Jetzt registrieren</Link>
+    <Link :href="route('register')"> Jetzt ausprobieren</Link>
   </button>
 </template>
 <script>

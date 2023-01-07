@@ -23,8 +23,8 @@
             <div class="mt-2">Oliver Reinking</div>
             <div class="mt-2">Nordpfad 25, 66482 Zweibrücken</div>
             <div class="mt-2">Mobil: +49 170 881 9944</div>
-            <div class="mt-2">Mail oliver[at]codingjungle.de</div>
-            <div class="mt-2">Web: https://codingjungle.de</div>
+            <div class="mt-2">Mail oliver[at]kreativschreiber.com</div>
+            <div class="mt-2">Web: https://kreativschreiber.com</div>
           </div>
         </div>
 

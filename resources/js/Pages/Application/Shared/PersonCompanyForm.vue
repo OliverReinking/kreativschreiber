@@ -174,7 +174,7 @@
           <input-container>
             <input-label
               name="billing_address"
-              label="Unternehmen"
+              label="Dein Name bzw. der Name des Unternehmens"
             ></input-label>
             <input-element
               type="text"
@@ -189,7 +189,7 @@
           <input-container>
             <input-label
               name="billing_address_line_2"
-              label="Unternehmen - zweite Zeile"
+              label="Unternehmensbezeichnung (Zeile 2)"
             ></input-label>
             <input-element
               type="text"
@@ -266,17 +266,17 @@
             Daten ändern
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start">
+        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
           <input-button type="button" @click.prevent="creditPoints(500)">
             500 Punkte gutschreiben
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start">
+        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
           <input-button type="button" @click.prevent="creditPoints(1000)">
             1.000 Punkte gutschreiben
           </input-button>
         </smooth-scroll>
-        <smooth-scroll href="#app-layout-start">
+        <smooth-scroll href="#app-layout-start" v-if="applicationName == $page.props.applications.app_admin">
           <input-button type="button" @click.prevent="creditPoints(2000)">
             2.000 Punkte gutschreiben
           </input-button>

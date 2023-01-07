@@ -11,7 +11,7 @@ Nordpfad 25
 
 ### Kontakt:
 Telefon: 06332 993 993
-E-Mail: oliver[at]codingjungle.de
+E-Mail: oliver[at]kreativschreiber.com
 
 ## Erhebung und Verarbeitung von Daten
 Wir erheben und verarbeiten die folgenden Daten von dir, um deine Anmeldung für das Webinar zu bearbeiten und dich über den Verlauf und die Durchführung des Webinars zu informieren:
@@ -33,7 +33,7 @@ Deine Daten werden für die Dauer der Anmeldung zum Webinar und für einen Zeitr
 ## Deine Rechte
 Du hast das Recht, jederzeit Auskunft über die von uns über dich gespeicherten Daten zu verlangen. Du kannst deine Einwilligung zur Verarbeitung deiner Daten jederzeit widerrufen und deine Daten berichtigen oder löschen lassen.
 
-Bitte wende dich dazu an uns unter der E-Mail-Adresse oliver[at]codingjungle.de.
+Bitte wende dich dazu an uns unter der E-Mail-Adresse oliver[at]kreativschreiber.com.
 
 ## Änderungen der Datenschutzerklärung
 Wir behalten uns das Recht vor, diese Datenschutzerklärung jederzeit unter Beachtung der geltenden Datenschutzvorschriften zu ändern. Bitte beachte daher regelmäßig die aktuelle Fassung der Datenschutzerklärung.

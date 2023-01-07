@@ -85,7 +85,10 @@
               <sidebar-link
                 icon="icon-building-office"
                 :route-name="
-                  route('customer.person_company.edit', $page.props.userdata.customer_id)
+                  route(
+                    'customer.person_company.edit',
+                    $page.props.userdata.customer_id
+                  )
                 "
                 label="Kundendaten"
               ></sidebar-link>
@@ -111,6 +114,24 @@
             icon="icon-arrow-right-on-rectangle"
             :route-name="route('customer.chat.outbox.index')"
             label="Postausgang"
+          ></sidebar-link>
+          <sidebar-link
+            target="_blank"
+            icon="icon-arrow-right"
+            :route-name="route('privacy')"
+            label="Datenschutzerklärung"
+          ></sidebar-link>
+          <sidebar-link
+            target="_blank"
+            icon="icon-arrow-right"
+            :route-name="route('terms')"
+            label="Nutzungsbedingungen"
+          ></sidebar-link>
+          <sidebar-link
+            target="_blank"
+            icon="icon-arrow-right"
+            :route-name="route('imprint')"
+            label="Impressum"
           ></sidebar-link>
           <application-switch
             v-if="$page.props.userdata.is_admin"

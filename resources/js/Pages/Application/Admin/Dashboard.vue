@@ -56,6 +56,21 @@
           </template>
         </navigation-card>
 
+        <navigation-card title="Akquisition">
+          <template #icon> <icon-newspaper /> </template>
+          <template #description>
+            Hier findest du alles zum Thema Akquisition
+          </template>
+          <template #buttonOne>
+            <Link
+              :href="route('admin.acquisition.index')"
+              class="flex items-center"
+            >
+              <icon-card-list class="inline-block h-5 w-5 mr-2" />Dashboard
+            </Link>
+          </template>
+        </navigation-card>
+
         <navigation-card title="Content">
           <template #icon> <icon-newspaper /> </template>
           <template #description>
@@ -63,7 +78,7 @@
           </template>
           <template #buttonOne>
             <Link
-              :href="route('admin.content.index')"
+              :href="route('admin.content.dashboard')"
               class="flex items-center"
             >
               <icon-card-list class="inline-block h-5 w-5 mr-2" />Dashboard

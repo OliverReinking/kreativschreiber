@@ -403,8 +403,8 @@
             <div class="flex justify-start space-x-3">
               <a
                 target="_blank"
-                href="https://twitter.com"
-                title="Twitter"
+                href="https://twitter.com/KreativOlli"
+                title="Oliver ist der KreativOlli bei Twitter"
                 class="flex items-center p-1"
               >
                 <svg

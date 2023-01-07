@@ -64,7 +64,10 @@
       <template #title> KreativSchreiber-Punkte kaufen </template>
 
       <template #content>
-        Bist du sicher, dass du {{ points }} KreativSchreiber-Punkte kaufen
+        Bist du sicher, dass du <display-number
+          :value="points"
+          :after-digits="0"
+        ></display-number> KreativSchreiber-Punkte kaufen
         möchtest?
       </template>
 

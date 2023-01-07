@@ -2,22 +2,22 @@
 
 namespace App\Http\Controllers;
 
-use Carbon\Carbon;
-use App\Models\Chat;
-use App\Models\User;
-use Inertia\Inertia;
-use App\Models\Booking;
-use App\Models\Country;
-use App\Models\ChatType;
-use App\Models\Salutation;
-use App\Models\BookingType;
-use App\Models\ChatUserType;
-use App\Models\PersonCompany;
-use Illuminate\Support\Facades\Log;
-use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Request;
-use Illuminate\Support\Facades\Redirect;
 use App\Http\Requests\RequestUpdatePersonCompany;
+use App\Models\Booking;
+use App\Models\BookingType;
+use App\Models\Chat;
+use App\Models\ChatType;
+use App\Models\ChatUserType;
+use App\Models\Country;
+use App\Models\PersonCompany;
+use App\Models\Salutation;
+use App\Models\User;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Request;
+use Inertia\Inertia;
 
 class PersonCompanyController extends Controller
 {
@@ -97,10 +97,10 @@ class PersonCompanyController extends Controller
     public function admin_person_company_credit_points(PersonCompany $person_company, $points)
     {
         //
-        Log::info('admin_person_company_credit_points', [
-            'person_company->id' => $person_company->id,
-            'points' => $points,
-        ]);
+        //Log::info('admin_person_company_credit_points', [
+        //    'person_company->id' => $person_company->id,
+        //    'points' => $points,
+        //]);
         // validiere $points
         if ($points != 500 && $points != 1000 && $points != 2000) {
             $error = "Eine Punktegutschreibung funktioniert nur mit 500, 1.000 oder 2.000 Punkten.<br />";
@@ -172,25 +172,21 @@ class PersonCompanyController extends Controller
             //
             $admin->delete();
         }
-        // ------------------------
-        // ist Unternehmen Company?
-        // ------------------------
-        if ($company) {
-            // lösche alle User mit users.company_id = $company.company_id
-            User::deleteUserConsultant($company->company_id);
-            //
-            $company->delete();
-        }
         // ----------------------
         // ist Unternehmen Kunde?
         // ----------------------
         if ($customer) {
             // lösche alle User mit users.customer_id = $customer.customer_id
             User::deleteUserCustomer($customer->customer_id);
+            // lösche alle Datensätze des Kunden customer in contents
+            $contents = Content::where('person_company_id', '=', $customer->customer_id)->get();
+            foreach ($contents as $content) {
+                $content->delete();
+            }
             //
             $customer->delete();
         }
-        // Passe Attribute in companies an
+        // Passe Attribute in person_companies an
         $person_company->name = null;
         $person_company->street = null;
         $person_company->country_id = Country::COUNTRY_GERMANY;
@@ -203,6 +199,8 @@ class PersonCompanyController extends Controller
         $person_company->contactperson_email = null;
         $person_company->billing_address = null;
         $person_company->billing_address_line_2 = null;
+        $person_company->billing_street = null;
+        $person_company->billing_country_id = Country::COUNTRY_GERMANY;
         $person_company->billing_postcode = null;
         $person_company->billing_city = null;
         //

@@ -65,6 +65,11 @@ class CreateNewUser implements CreatesNewUsers
                     'contactperson_last_name' => $user->first_name,
                     'contactperson_first_name' => $user->last_name,
                     'contactperson_email' => $user->email,
+                    'billing_address' => $input['company_name'],
+                    'billing_street' => $input['company_street'],
+                    'billing_country_id' => Country::COUNTRY_GERMANY,
+                    'billing_postcode' => $input['company_postcode'],
+                    'billing_city' => $input['company_city'],
                 ]);
                 // create customers
                 Customer::create([

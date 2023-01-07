@@ -26,6 +26,8 @@ Beginn: {{ formatDateLocale($registrationvalues->event_date) }}, {{ $registratio
 Bitte rufe am Tag der Veranstaltung im Browser den folgenden Link auf:
 <a href="{{ $registrationvalues->access }}" >{{ $registrationvalues->access }}</a>
 
+Du bekommst am Veranstaltungstag nochmals eine Mail mit den notwendigen Infos zu diesem Webinar.
+
 Wir freuen uns auf deine Teilnahme.
 
 @endcomponent

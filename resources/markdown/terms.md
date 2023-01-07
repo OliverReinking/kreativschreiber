@@ -26,7 +26,7 @@ Oliver Reinking behält sich das Recht vor, diese Nutzungsbedingungen jederzeit 
 der, gelten die geänderten Nutzungsbedingungen als angenommen. Widerspricht der Nutzer den Änderungen, hat er das Recht, sein Nutzerkonto zu kündigen.
 
 ## 6. Kündigung und Beendigung der Nutzung
-Der Nutzer hat das Recht, sein Nutzerkonto jederzeit zu kündigen. Die Kündigung muss schriftlich per E-Mail an oliver[at]codingjungle.de erfolgen.
+Der Nutzer hat das Recht, sein Nutzerkonto jederzeit zu kündigen. Die Kündigung muss schriftlich per E-Mail an oliver[at]kreativschreiber.com erfolgen.
 
 Oliver Reinking behält sich das Recht vor, die Nutzung von KreativSchreiber jederzeit und ohne Angabe von Gründen zu beenden. In diesem Fall werden dem Nutzer alle noch vorhandenen KreativSchreiber-Punkte anteilig erstattet.
 

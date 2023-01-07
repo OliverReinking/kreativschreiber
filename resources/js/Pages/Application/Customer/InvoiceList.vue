@@ -59,6 +59,7 @@
             <display-number
               :value="data.datarow.sum_gross_price"
               :after-digits="2"
+              :value-unit="data.datarow.currency_name"
             ></display-number>
           </td>
           <td class="np-dl-td-normal">

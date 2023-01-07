@@ -5,7 +5,7 @@
         :application-name="$page.props.applications.app_admin"
         :current="blog.id > 0 ? 'Ändere Blogartikel' : 'Blogartikel erstellen'"
         :breadcrumbs="{
-          'Übersicht Content': route('admin.content.index'),
+          'Übersicht Content': route('admin.content.dashboard'),
           'Liste der Blogartikels': route('admin.blog.index'),
         }"
       ></breadcrumb>

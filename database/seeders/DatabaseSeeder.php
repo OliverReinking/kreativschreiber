@@ -61,7 +61,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateSalutations::class);
         $this->call(NewsletterData::class);
         //
-        $this->call(FirstInvoice::class);
+        //$this->call(FirstInvoice::class);
     }
 }
 
@@ -73,7 +73,7 @@ class AdminSeeder extends Seeder
         $user = User::create([
             'first_name' => 'Oliver',
             'last_name' => 'Reinking',
-            'email' => 'oliver@codingjungle.de',
+            'email' => 'oliver@kreativschreiber.com',
             'email_verified_at' => Carbon::now(),
             'password' => Hash::make('12345678'),
             'is_admin' => true,
@@ -86,7 +86,7 @@ class AdminSeeder extends Seeder
             'contactperson_salutation_id' => Salutation::SALUTATION_MALE,
             'contactperson_last_name' => 'Oliver',
             'contactperson_first_name' => 'Reinking',
-            'contactperson_email' => 'oliver@codingjungle.de',
+            'contactperson_email' => 'oliver@kreativschreiber.com',
         ]);
         // Create Administration
         Administration::create([
@@ -665,8 +665,8 @@ class CreateBlogImages extends Seeder
             'name' => 'Texter',
             'url' => '/images/blogimages/Blog_Copywriter_Woman_Standing_480x360.jpg',
         ]);
-          // Create BlogImage
-          BlogImage::create([
+        // Create BlogImage
+        BlogImage::create([
             'id' => 27,
             'name' => 'Architektur',
             'url' => '/images/blogimages/Blog_Architecture_Zaha_Hadid_480x360.jpg',
@@ -735,7 +735,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $blog_category_id = 1;
         $title = "Die Anwendung KreativSchreiber";
         $summary = "Unsere Anwendung bietet professionelle Unterstützung bei der Erstellung von Blog- und Werbetexten für Unternehmen, Werbeagenturen und Einzelpersonen. Nutzen Sie unseren Service für erfolgreiche Blog-Beiträge und Werbekampagnen.";
-        $blog_date = Carbon::now()->subDays(28);
+        $blog_date = new Carbon("2023-01-01");
         $reading_time = 3;
         //
         Blog::create([
@@ -758,7 +758,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $blog_category_id = 5;
         $title = "Die Bedeutung von Blogs";
         $summary = "Ein Blog ist eine Plattform, auf der Unternehmen ihre Gedanken, Meinungen und Neuigkeiten mit ihren Lesern teilen können und hilft dabei, Traffic auf der Unternehmenswebsite zu generieren, das Vertrauen der Leser zu stärken und das Suchmaschinenranking zu verbessern. Regelmäßige Veröffentlichung von interessanten und relevanten Inhalten ist entscheidend. Ein Blog ist ein wichtiges Marketinginstrument für Unternehmen.";
-        $blog_date = Carbon::now()->subDays(21);
+        $blog_date = new Carbon("2023-01-08");
         $reading_time = 3;
         //
         Blog::create([
@@ -781,7 +781,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $blog_category_id = 4;
         $title = "Bedeutung von Werbetexten in Online-Shops";
         $summary = "Werbetexte in Online-Shops sind wichtig, um das Interesse der Kunden zu wecken und sie zum Kauf zu bewegen. Sie sollten die Vorteile und USPs eines Produkts hervorheben und zeigen, wie es das Leben der Kunden verbessern kann. Sie sollten gut strukturiert, leicht verständlich, kurz und prägnant sein und einen ansprechenden Schreibstil und eine gute Lesbarkeit aufweisen.";
-        $blog_date = Carbon::now()->subDays(14);
+        $blog_date = new Carbon("2023-01-15");
         $reading_time = 3;
         //
         Blog::create([
@@ -798,29 +798,52 @@ class CreateBlogWithMarkdownFormat extends Seeder
             'audio_url' => '/audio/blogs/blog_3.mp3',
             'audio_duration' => 89,
         ]);
-         // für den vierten Artikel setze markdown_on auf true
-         $blog_author_id = 1;
-         $blog_image_id = 27;
-         $blog_category_id = 5;
-         $title = "Wer war Zaha Hadid?";
-         $summary = "Der KreativSchreiber hat diesen Text geschrieben. Er handelt von der Architektin Zaha Hadid und zeigt, dass der KreativSchreiber hochwertige Texte liefern kann.";
-         $blog_date = Carbon::now()->subDays(7);
-         $reading_time = 3;
-         //
-         Blog::create([
-             'blog_author_id' => $blog_author_id,
-             'blog_image_id' => $blog_image_id,
-             'blog_category_id' => $blog_category_id,
-             'title' => $title,
-             'summary' => $summary,
-             'blog_date' => $blog_date,
-             'content' => null,
-             'reading_time' => $reading_time,
-             'markdown_on' => true,
-             'audio_on' => false,
-             'audio_url' => null,
-             'audio_duration' => null,
-         ]);
+        // für den vierten Artikel setze markdown_on auf true
+        $blog_author_id = 1;
+        $blog_image_id = 27;
+        $blog_category_id = 5;
+        $title = "Wer war Zaha Hadid?";
+        $summary = "Der KreativSchreiber hat diesen Text geschrieben. Er handelt von der Architektin Zaha Hadid und zeigt, dass der KreativSchreiber hochwertige Texte liefern kann.";
+        $blog_date = new Carbon("2023-01-22");
+        $reading_time = 3;
+        //
+        Blog::create([
+            'blog_author_id' => $blog_author_id,
+            'blog_image_id' => $blog_image_id,
+            'blog_category_id' => $blog_category_id,
+            'title' => $title,
+            'summary' => $summary,
+            'blog_date' => $blog_date,
+            'content' => null,
+            'reading_time' => $reading_time,
+            'markdown_on' => true,
+            'audio_on' => false,
+            'audio_url' => null,
+            'audio_duration' => null,
+        ]);
+        // für den fünften Artikel setze markdown_on auf true
+        $blog_author_id = 1;
+        $blog_image_id = 24;
+        $blog_category_id = 5;
+        $title = "Wer war Salvadore Dali?";
+        $summary = "Der KreativSchreiber hat diesen Text geschrieben. Er handelt von dem Künstler Salvadore Dali und zeigt, dass der KreativSchreiber hochwertige Texte liefern kann.";
+        $blog_date = new Carbon("2023-01-29");
+        $reading_time = 3;
+        //
+        Blog::create([
+            'blog_author_id' => $blog_author_id,
+            'blog_image_id' => $blog_image_id,
+            'blog_category_id' => $blog_category_id,
+            'title' => $title,
+            'summary' => $summary,
+            'blog_date' => $blog_date,
+            'content' => null,
+            'reading_time' => $reading_time,
+            'markdown_on' => true,
+            'audio_on' => false,
+            'audio_url' => null,
+            'audio_duration' => null,
+        ]);
     }
 }
 
@@ -829,8 +852,8 @@ class WebinarData extends Seeder
     public function run()
     {
         // Lege 1 Webinar an
-        $event_date = Carbon::now()->addMinutes(rand(1000, 1000000));
-        $event_start = "16:00 Uhr";
+        $event_date = new Carbon("2023-02-24");
+        $event_start = "17:00 Uhr";
         $webinar_image_id = rand(1, 6);
         //
         $description = "Willkommen zu unserem Webinar über die revolutionäre Anwendung <b>KreativSchreiber</b> von Oliver Reinking!<br />";
@@ -849,7 +872,7 @@ class WebinarData extends Seeder
             'event_start' => $event_start,
             'title' => 'Erstelle professionelle Werbe- und Blogtexte mit unserer Anwendung KreativSchreiber',
             'description' => $description,
-            'access' => config('app.url') . '/webinar/1',
+            'access' => 'https://meet.jit.si/moderated/71590772762166edb747842a6815a76ce58ddaf274453bfd2f131525d70b7265',
         ]);
     }
 }
@@ -865,12 +888,6 @@ class NewsletterData extends Seeder
             'name' => 'Plattform ' . config('kreativschreiber.platform.name'),
             'description' => 'In diesem Newsletter berichten wir über die Plattform ' . config('kreativschreiber.platform.name') . '.',
         ]);
-        //
-        NewsletterMember::factory()->times(200)->create(
-            [
-                'newsletter_id' => Newsletter::Newsletter_Platform,
-            ]
-        );
     }
 }
 
@@ -912,5 +929,12 @@ class TestData extends Seeder
         }
         // Lege 2000 Chatnachrichten an
         Chat::factory()->times(2000)->create();
+        //
+        NewsletterMember::factory()->times(200)->create(
+            [
+                'newsletter_id' => Newsletter::Newsletter_Platform,
+            ]
+        );
+
     }
 }

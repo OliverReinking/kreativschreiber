@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AcquisitionController;
 use App\Http\Controllers\ApplicationController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\BookingController;
@@ -220,20 +221,57 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // Display der Nachricht (Postausgang)
         Route::get('/admin/chat/outbox/show/{chat}', [ChatController::class, 'admin_chat_outbox_show'])
             ->name('admin.chat.outbox.show');
-        // ---------
-        // Processes
-        // ---------
+        // -----------
+        // Acquisition
+        // -----------
         Route::get(
-            '/admin/processes',
-            [DashboardAdminController::class, 'admin_processes']
-        )->name('admin.processes');
+            '/admin/dashboard/acquisitions',
+            [DashboardAdminController::class, 'admin_acquisitions_dashboard']
+        )->name('admin.acquisition.dashboard');
+        Route::get(
+            '/admin/acquisitions/index/{filter_read?}',
+            [AcquisitionController::class, 'admin_acquisition_index']
+        )->name('admin.acquisition.index');
+        // Anzeige Acquisition
+        Route::get('/admin/acquisitions/show/{acquisition}', [AcquisitionController::class, 'admin_acquisition_show'])
+            ->name('admin.acquisition.show');
+        // Create a new Acquisition
+        Route::get('/admin/acquisitions/create', [AcquisitionController::class, 'admin_acquisition_create'])
+            ->name('admin.acquisition.create');
+        // Store Acquisition
+        Route::post('/admin/acquisitions/store', [AcquisitionController::class, 'admin_acquisition_store'])
+            ->name('admin.acquisition.store');
+        // Edit der Acquisition
+        Route::get('/admin/acquisitions/{acquisition}/edit', [AcquisitionController::class, 'admin_acquisition_edit'])
+            ->name('admin.acquisition.edit');
+        // Update der Acquisition
+        Route::put('/admin/acquisitions/{acquisition}', [AcquisitionController::class, 'admin_acquisition_update'])
+            ->name('admin.acquisition.update');
+        // Change running in true der Acquisition
+        Route::put('/admin/acquisitions/{acquisition}/running/yes', [AcquisitionController::class, 'admin_acquisition_update_running_true'])
+            ->name('admin.acquisition.update.running.true');
+        // Change running in false der Acquisition
+        Route::put('/admin/acquisitions/{acquisition}/running/no', [AcquisitionController::class, 'admin_acquisition_update_running_false'])
+            ->name('admin.acquisition.update.running.false');
+        // Change successful in true der Acquisition
+        Route::put('/admin/acquisitions/{acquisition}/successful/yes', [AcquisitionController::class, 'admin_acquisition_update_successful_true'])
+            ->name('admin.acquisition.update.successful.true');
+        // Change successful in false der Acquisition
+        Route::put('/admin/acquisitions/{acquisition}/successful/no', [AcquisitionController::class, 'admin_acquisition_update_successful_false'])
+            ->name('admin.acquisition.update.successful.false');
+        // Acquisition Delete
+        Route::delete('/admin/acquisitions/{acquisition}', [AcquisitionController::class, 'admin_acquisition_delete'])
+            ->name('admin.acquisition.delete');
+        // Create a new Acquisition-Action
+        Route::put('/admin/acquisitions/action/create/{acquisition}/{action_number}', [AcquisitionController::class, 'admin_acquisition_action_create'])
+            ->name('admin.acquisition.create.action');
         // -----------------------------------------------------
         // Content (Blogs, Webinare, Newsletter, Contentplanung)
         // -----------------------------------------------------
         Route::get(
-            '/admin/contents',
-            [DashboardAdminController::class, 'admin_content_index']
-        )->name('admin.content.index');
+            '/admin/dashboard/contents',
+            [DashboardAdminController::class, 'admin_content_dashboard']
+        )->name('admin.content.dashboard');
         // -----
         // Blogs
         // -----
@@ -316,13 +354,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // Newsletter-Member Delete
         Route::delete('/admin/newslettermembers/{newsletter_member}', [NewsletterMemberController::class, 'admin_newsletter_member_delete'])
             ->name('admin.newsletter.member.delete');
-        // ----------
-        // Statistics
-        // ----------
-        Route::get(
-            '/admin/statistics',
-            [DashboardAdminController::class, 'admin_statistics']
-        )->name('admin.statistics');
         // -----
         // Users
         // -----
@@ -344,9 +375,6 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // -------------
         // Documentation
         // -------------
-        // Übersicht Dokumentation
-        Route::get('/admin/documentation', [DashboardAdminController::class, 'admin_documentation'])
-            ->name('admin.documentation');
         // =======
         // Profile
         // =======

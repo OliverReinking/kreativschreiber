@@ -1,6 +1,6 @@
 # Erstellung eines Blogtextes
 
-In diesem Beispiel sollte ein Blogtext über die Architektin Zaha Hadid erstellt werden.
+In diesem Beispiel wurde ein Blogtext über die Architektin Zaha Hadid erstellt werden.
 Folgende Eingaben wurden gemacht:
 - Thema: Wer war die Architektin Zaha Hadid?  
 - Interessengruppen: Architekten

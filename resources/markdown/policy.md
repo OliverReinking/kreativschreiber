@@ -50,7 +50,7 @@ Wir treffen angemessene technische und organisatorische Sicherheitsmaßnahmen, u
 ## 8. Betroffenenrechte
 Sie haben das Recht, jederzeit Auskunft über Ihre bei uns gespeicherten personenbezogenen Daten zu erhalten. Ebenso haben Sie das Recht auf Berichtigung, Löschung oder Einschränkung der Verarbeitung Ihrer personenbezogenen Daten. Sie haben ferner das Recht, der Verarbeitung Ihrer personenbezogenen Daten zu widersprechen und die Daten in einem strukturierten, gängigen und maschinenlesbaren Format zu erhalten.
 
-Bitte wenden Sie sich bei Fragen oder Anliegen zum Thema Datenschutz an uns unter oliver[at]codingjungle.de oder nutzen Sie Ihr Recht auf Beschwerde bei einer Aufsichtsbehörde.
+Bitte wenden Sie sich bei Fragen oder Anliegen zum Thema Datenschutz an uns unter oliver[at]kreativschreiber.com oder nutzen Sie Ihr Recht auf Beschwerde bei einer Aufsichtsbehörde.
 
 Sie können dies z.B. bei der für mich zuständigen Aufsichtsbehörde tun:  
 **Landesbeauftragter für den Datenschutz und die Informationsfreiheit Rheinland-Pfalz**  

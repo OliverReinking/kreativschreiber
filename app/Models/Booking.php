@@ -80,8 +80,7 @@ class Booking extends Model
         int $content_id,
         int $invoice_id,
         $notes
-    )
-    {
+    ) {
         $booking_type = BookingType::Find($booking_type_id);
         //
         $sign = -1;
@@ -89,10 +88,10 @@ class Booking extends Model
             $sign = $booking_type->sign;
         }
         //
-        Log::info('createNewBooking', [
-            'sign' => $sign,
-            'booking_type' => $booking_type,
-        ]);
+        //Log::info('createNewBooking', [
+        //    'sign' => $sign,
+        //    'booking_type' => $booking_type,
+        //]);
         //
         $output_points = $points * $sign;
         //
@@ -101,7 +100,7 @@ class Booking extends Model
             'booking_type_id' => $booking_type_id,
             'content_id' => $content_id,
             'invoice_id' => $invoice_id,
-            'booking_date' =>  Carbon::now(),
+            'booking_date' => Carbon::now(),
             'points' => $output_points,
             'notes' => $notes,
         ]);
@@ -128,9 +127,9 @@ class Booking extends Model
         $ksPoints = Booking::where('person_company_id', '=', $person_company->id
         )->sum('points');
         //
-        Log::info('checkPoints', [
-            'ksPoints' => $ksPoints,
-        ]);
+        //Log::info('checkPoints', [
+        //    'ksPoints' => $ksPoints,
+        //]);
         //
         if ($points > $ksPoints) {
             $result->errorOn = true;
