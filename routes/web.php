@@ -382,8 +382,11 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         Route::delete('/admin/users/{appuser}', [UserController::class, 'admin_user_delete'])
             ->name('admin.user.delete');
         // -------------
-        // Documentation
+        // Version
         // -------------
+        // Übersicht Versions-Dokumentation
+        Route::get('/admin/version', [DashboardAdminController::class, 'admin_version'])
+            ->name('admin.version');
         // =======
         // Profile
         // =======

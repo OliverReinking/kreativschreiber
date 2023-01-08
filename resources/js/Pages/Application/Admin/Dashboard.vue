@@ -10,6 +10,44 @@
     </page-title>
 
     <section class="mt-8">
+      <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
+        <statistic-value
+          :with-link="false"
+          :with-icon="true"
+          icon="icon-users"
+          label="Anzahl der Anwender"
+          value-type="number"
+          :after-digits="0"
+          value-unit="Anwender"
+          value-single-unit="Anwender"
+          :value="counts.users"
+        ></statistic-value>
+        <statistic-value
+          :with-link="false"
+          :with-icon="true"
+          icon="icon-users"
+          label="Anzahl der Kunden"
+          value-type="number"
+          :after-digits="0"
+          value-unit="Kunden"
+          value-single-unit="Kunde"
+          :value="counts.customers"
+        ></statistic-value>
+        <statistic-value
+          :with-link="false"
+          :with-icon="true"
+          icon="icon-users"
+          label="Anzahl der Administratoren"
+          value-type="number"
+          :after-digits="0"
+          value-unit="Administratoren"
+          value-single-unit="Administrator"
+          :value="counts.admins"
+        ></statistic-value>
+      </div>
+    </section>
+
+    <section class="mt-8">
       <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
 
          <navigation-card title="Liste der KreativSchreiber-Transaktionen" :buttonTwo="false">
@@ -102,6 +140,22 @@
           </template>
         </navigation-card>
 
+         <navigation-card title="Version">
+          <template #icon> <icon-document-text /> </template>
+          <template #description>
+            Hier findest du alles zu den Versionen dieser Anwendung
+          </template>
+          <template #buttonOne>
+            <Link
+              :href="route('admin.version')"
+              class="flex items-center"
+            >
+              <icon-card-list class="inline-block h-5 w-5 mr-2" />zur Dokumentation
+            </Link>
+          </template>
+        </navigation-card>
+
+
         <navigation-card title="Teammitglieder" :buttonTwo="true">
           <template #icon> <icon-users /> </template>
           <template #description>
@@ -176,43 +230,6 @@
       </div>
     </section>
 
-    <section class="mt-8">
-      <div class="grid gap-6 mb-8 md:grid-cols-2 xl:grid-cols-4">
-        <statistic-value
-          :with-link="false"
-          :with-icon="true"
-          icon="icon-users"
-          label="Anzahl der Anwender"
-          value-type="number"
-          :after-digits="0"
-          value-unit="Anwender"
-          value-single-unit="Anwender"
-          :value="counts.users"
-        ></statistic-value>
-        <statistic-value
-          :with-link="false"
-          :with-icon="true"
-          icon="icon-users"
-          label="Anzahl der Kunden"
-          value-type="number"
-          :after-digits="0"
-          value-unit="Kunden"
-          value-single-unit="Kunde"
-          :value="counts.customers"
-        ></statistic-value>
-        <statistic-value
-          :with-link="false"
-          :with-icon="true"
-          icon="icon-users"
-          label="Anzahl der Administratoren"
-          value-type="number"
-          :after-digits="0"
-          value-unit="Administratoren"
-          value-single-unit="Administrator"
-          :value="counts.admins"
-        ></statistic-value>
-      </div>
-    </section>
   </admin-layout>
 </template>
 <script>
@@ -239,6 +256,7 @@ import IconAddCircle from "@/Pages/Components/Icons/AddCircle.vue";
 import IconNewspaper from "@/Pages/Components/Icons/Newspaper.vue";
 import IconEye from "@/Pages/Components/Icons/Eye.vue";
 import IconCreditCard from "@/Pages/Components/Icons/CreditCard.vue";
+import IconDocumentText from "@/Pages/Components/Icons/DocumentText.vue";
 
 export default defineComponent({
   name: "Admin_Dashboard",
@@ -260,6 +278,7 @@ export default defineComponent({
     IconNewspaper,
     IconEye,
     IconCreditCard,
+    IconDocumentText,
   },
 
   props: {

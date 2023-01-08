@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Inertia\Inertia;
+use Illuminate\Support\Str;
+use Illuminate\Http\Request;
 use Laravel\Jetstream\Jetstream;
+use Illuminate\Support\Facades\DB;
 
 class DashboardAdminController extends Controller
 {
@@ -22,6 +23,16 @@ class DashboardAdminController extends Controller
         return Inertia::render('Application/Admin/Dashboard', [
             'counts' => $counts,
         ]);
+    }
+    //
+    public function admin_version()
+    {
+      $versionFile = Jetstream::localizedMarkdownPath('version.md');
+      $version_documentation = Str::markdown(file_get_contents($versionFile));
+      //
+      return Inertia::render('Application/Admin/Version', [
+        'version_documentation' => $version_documentation,
+      ]);
     }
     //
     public function admin_acquisitions_dashboard()

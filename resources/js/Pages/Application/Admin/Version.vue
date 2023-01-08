@@ -3,12 +3,12 @@
     <template #breadcrumb>
       <breadcrumb
         :application-name="$page.props.applications.app_admin"
-        current="Dokumentation"
+        current="Version"
       ></breadcrumb>
     </template>
 
     <div class="mt-8">
-      <markdown :markdown="documentation"></markdown>
+      <markdown :markdown="version_documentation"></markdown>
     </div>
   </admin-layout>
 </template>
@@ -21,7 +21,7 @@ import Breadcrumb from "@/Pages/Components/Breadcrumb.vue";
 import Markdown from "@/Pages/Components/Content/Markdown.vue";
 
 export default defineComponent({
-  name: "Admin_Documentation",
+  name: "Admin_Version",
 
   components: {
     AdminLayout,
@@ -30,7 +30,7 @@ export default defineComponent({
   },
 
   props: {
-    documentation: {
+    version_documentation: {
       type: String,
       required: true,
     },
