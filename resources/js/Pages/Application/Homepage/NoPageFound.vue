@@ -24,7 +24,7 @@
           </p>
           <a
             :href="route('home')"
-            class="px-8 py-3 font-semibold rounded bg-sunprimary text-on-sunprimary dark:bg-nightprimary dark:text-on-nightprimary"
+            class="px-2 py-2 font-semibold rounded bg-sunprimary text-on-sunprimary dark:bg-nightprimary dark:text-on-nightprimary"
             >Zurück zur Homepage</a
           >
         </div>

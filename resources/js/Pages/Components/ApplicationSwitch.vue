@@ -28,7 +28,7 @@
                     $page.props.userdata.is_admin &&
                     applicationName != $page.props.applications.app_admin
                 "
-                route-name="admin.dashboard"
+                :route-name="route('admin.dashboard')"
                 icon="icon-view-grid"
                 :label="$page.props.applications.app_admin_name"
             >
@@ -38,7 +38,7 @@
                     $page.props.userdata.is_customer &&
                     applicationName != $page.props.applications.app_customer
                 "
-                route-name="customer.dashboard"
+                :route-name="route('customer.dashboard')"
                 icon="icon-view-grid"
                 :label="$page.props.applications.app_customer_name"
             >

@@ -9,7 +9,8 @@
         inset-0
         z-20
         transition-opacity
-        bg-sunprimary-500
+        bg-sunprimary-light
+        dark:bg-nightprimary-dark
         opacity-50
         lg:hidden
       "
@@ -60,7 +61,7 @@
               :route-name="route('admin.acquisition.dashboard')"
               label="Übersicht"
             ></sidebar-link>
-             <sidebar-link
+            <sidebar-link
               icon="icon-newspaper"
               :route-name="route('admin.acquisition.index')"
               label="Akquisitionen"

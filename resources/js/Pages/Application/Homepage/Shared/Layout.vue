@@ -272,22 +272,18 @@
         "
       >
         <div class="lg:w-1/3">
-          <a
-            rel="noopener noreferrer"
-            href="#"
-            class="flex justify-center space-x-3 lg:justify-start"
-          >
+          <div class="flex justify-center space-x-3 lg:justify-start">
             <company-name
               :with-favicon="true"
               :with-link="true"
               :with-slogan="false"
               route-name="home"
             ></company-name>
-          </a>
+          </div>
         </div>
         <div
           class="
-            grid grid-cols-2
+            grid grid-cols-1
             text-sm
             gap-x-3 gap-y-8
             lg:w-2/3
@@ -299,13 +295,15 @@
               class="
                 tracking-wide
                 uppercase
+                text-center
+                sm:text-left
                 text-layout-900
                 dark:text-layout-100
               "
             >
               KreativSchreiber
             </h3>
-            <ul class="space-y-1">
+            <ul class="space-y-1 text-center sm:text-left">
               <li>
                 <footer-link label="Preise" route-name="pricing"></footer-link>
               </li>
@@ -331,13 +329,15 @@
               class="
                 tracking-wide
                 uppercase
+                text-center
+                sm:text-left
                 text-layout-900
                 dark:text-layout-100
               "
             >
               Unternehmen
             </h3>
-            <ul class="space-y-1">
+            <ul class="space-y-1 text-center sm:text-left">
               <li>
                 <footer-link label="Über mich" route-name="about"></footer-link>
               </li>
@@ -381,10 +381,19 @@
             </ul>
           </div>
           <div class="space-y-3">
-            <h3 class="uppercase text-layout-900 dark:text-layout-100">
+            <h3
+              class="
+                tracking-wide
+                uppercase
+                text-center
+                sm:text-left
+                text-layout-900
+                dark:text-layout-100
+              "
+            >
               Zur Anwendung
             </h3>
-            <ul class="space-y-1">
+            <ul class="space-y-1 text-center sm:text-left">
               <li>
                 <footer-link label="Login" route-name="login"></footer-link>
               </li>
@@ -397,10 +406,15 @@
             </ul>
           </div>
           <div class="space-y-3">
-            <div class="uppercase text-layout-900 dark:text-layout-100">
+            <div class="tracking-wide
+                uppercase
+                text-center
+                sm:text-left
+                text-layout-900
+                dark:text-layout-100">
               Social Media
             </div>
-            <div class="flex justify-start space-x-3">
+            <div class="flex justify-center sm:justify-start space-x-3">
               <a
                 target="_blank"
                 href="https://twitter.com/KreativOlli"
@@ -424,10 +438,13 @@
       <div
         class="py-6 text-sm text-center text-layout-600 dark:text-layout-400"
       >
-        © 2022 - {{ year }}
-        <footer-link label="KreativSchreiber" route-name="home"></footer-link>.
-        <br />
+        <footer-link
+          :label="'© 2022 - ' + year + ' KreativSchreiber'"
+          route-name="home"
+        ></footer-link
+        >.
         <span class="hidden sm:inline-block">
+          <br />
           Version: {{ $page.props.version.versionnr }} vom
           {{ $page.props.version.versionsdatum }}
         </span>

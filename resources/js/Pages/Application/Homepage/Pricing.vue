@@ -24,7 +24,7 @@
               oder großes Projekt, wir haben das passende Paket für dich. Kaufe
               einfach die benötigte Anzahl an KreativSchreiber-Punkten und nutze
               diese für unsere professionellen Textleistungen. Du entscheidest,
-              wie viel du ausgeben möchtestn und hast damit volle
+              wie viel du ausgeben möchtest und hast damit volle
               Kostenkontrolle.
               <br />
               <br />

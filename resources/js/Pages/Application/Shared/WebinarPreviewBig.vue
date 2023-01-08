@@ -32,7 +32,7 @@
         Veranstaltungsdatum:
         <display-date :value="webinar.event_date" :time-on="false" />
         um
-        <span>{{ webinar.event_start }}</span> Uhr
+        <span>{{ webinar.event_start }}</span>
       </div>
       <div v-html="webinar.description" class="pb-6"></div>
       <div>
