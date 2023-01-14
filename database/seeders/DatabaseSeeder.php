@@ -40,28 +40,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(AdminSeeder::class);
-        // nur in der Testumgebung
-        //$this->call(TestData::class);
-        // nur einmal pro Anwendung mit truncate
-        $this->call(CreateWebinarImages::class);
+
         $this->call(WebinarData::class);
-        $this->call(CreateBlogCategories::class);
-        $this->call(CreateBlogImages::class);
-        $this->call(CreateBlogAuthors::class);
         $this->call(CreateBlogWithMarkdownFormat::class);
-        $this->call(CreateChatTypes::class);
-        $this->call(CreateChatUserTypes::class);
-        $this->call(CreateCountries::class);
-        $this->call(CreateCurrency::class);
-        $this->call(CreateInvoiceStatus::class);
-        $this->call(CreateInvoiceType::class);
-        $this->call(CreateBookingTypes::class);
-        $this->call(CreateContentyTypes::class);
-        $this->call(CreateSalutations::class);
-        $this->call(NewsletterData::class);
-        //
-        //$this->call(FirstInvoice::class);
+
+        // nur im Text
+        if (1 == 2) {
+            $this->call(AdminSeeder::class);
+            // nur in der Testumgebung
+            //$this->call(TestData::class);
+            // nur einmal pro Anwendung mit truncate
+            $this->call(CreateWebinarImages::class);
+            $this->call(WebinarData::class);
+            $this->call(CreateBlogCategories::class);
+            $this->call(CreateBlogImages::class);
+            $this->call(CreateBlogAuthors::class);
+            $this->call(CreateBlogWithMarkdownFormat::class);
+            $this->call(CreateChatTypes::class);
+            $this->call(CreateChatUserTypes::class);
+            $this->call(CreateCountries::class);
+            $this->call(CreateCurrency::class);
+            $this->call(CreateInvoiceStatus::class);
+            $this->call(CreateInvoiceType::class);
+            $this->call(CreateBookingTypes::class);
+            $this->call(CreateContentyTypes::class);
+            $this->call(CreateSalutations::class);
+            $this->call(NewsletterData::class);
+            //
+            //$this->call(FirstInvoice::class);
+        }
     }
 }
 
@@ -80,9 +87,9 @@ class AdminSeeder extends Seeder
             'is_customer' => true,
         ]);
         //
-        $person_company = PersonCompany::factory()->create([
+        $person_company = PersonCompany::create([
             'is_natural_person' => true,
-            'name' => 'Codingjungle',
+            'name' => 'Oliver Reinking',
             'country_id' => Country::COUNTRY_GERMANY,
             'contactperson_salutation_id' => Salutation::SALUTATION_MALE,
             'contactperson_last_name' => 'Oliver',
