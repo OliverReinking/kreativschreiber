@@ -1,5 +1,8 @@
 # Version
 
+## Version 1.0.2 - 14.01.2023
+- Anpassungen im Bereich Webinar
+
 ## Version 1.0.1 - 08.01.2023
 - Korrektur von Rechtschreibfehlern
 - Korrektur von Designfehlern

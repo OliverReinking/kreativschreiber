@@ -82,13 +82,11 @@ class AdminSeeder extends Seeder
         //
         $person_company = PersonCompany::factory()->create([
             'is_natural_person' => false,
-            'name' => 'KreativSchreiber, eine Web-Anwendung von Oliver Reinking',
-            'country_id' => Country::COUNTRY_GERMANY,
-            'contactperson_salutation_id' => Salutation::SALUTATION_MALE,
-            'contactperson_first_name' => 'Oliver',
-            'contactperson_last_name' => 'Reinking',
-            'contactperson_email' => 'oliver@kreativschreiber.com',
-            'billing_country_id' => Country::COUNTRY_GERMANY,
+            'name' => 'Codingjungle',
+            'contactperson_salutation_id' => 1,
+            'contactperson_last_name' => 'Oliver',
+            'contactperson_first_name' => 'Reinking',
+            'contactperson_email' => 'oliver@codingjungle.de',
         ]);
         // Create Administration
         Administration::create([
@@ -875,6 +873,9 @@ class WebinarData extends Seeder
             'title' => 'Erstelle professionelle Werbe- und Blogtexte mit unserer Anwendung KreativSchreiber',
             'description' => $description,
             'access' => 'https://meet.jit.si/moderated/71590772762166edb747842a6815a76ce58ddaf274453bfd2f131525d70b7265',
+            'access_start' => 'https://moderated.jitsi.net/2c8e7e9ab007493fbb983866f5420ed514c3c40e7d9b4bc099d23e35abc896ee',
+            'access_moderator' => 'https://moderated.jitsi.net/2c8e7e9ab007493fbb983866f5420ed514c3c40e7d9b4bc099d23e35abc896ee',
+            'active' => true,
         ]);
     }
 }

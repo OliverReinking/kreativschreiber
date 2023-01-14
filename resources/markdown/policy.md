@@ -11,6 +11,10 @@ Nordpfad 25
 
 Ich bin gesetzlich nicht verpflichtet einen Datenschutzbeauftragten zu benennen.
 
+### Kontakt:
+Telefon: 06332 993 993  
+E-Mail: oliver[at]kreativschreiber.com
+
 ## 2. Erfassung und Verarbeitung von Daten
 Wir erfassen und verarbeiten die folgenden Daten, die uns von Ihnen zur Verfügung gestellt werden:
 

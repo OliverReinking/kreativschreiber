@@ -92,6 +92,38 @@
             <input-error :message="errors.access" />
           </input-container>
 
+          <input-container>
+            <input-label
+              name="access_start"
+              label="Link zur Startseite Webinarraum"
+            ></input-label>
+            <input-element
+              type="url"
+              name="access_start"
+              v-model="form.access_start"
+              placeholder="Link zur Startseite Webinarraum"
+              :required="true"
+              ref="access_start"
+            ></input-element>
+            <input-error :message="errors.access_start" />
+          </input-container>
+
+          <input-container>
+            <input-label
+              name="access_moderator"
+              label="Link zum Webinarraum für den Moderator"
+            ></input-label>
+            <input-element
+              type="url"
+              name="access_moderator"
+              v-model="form.access_moderator"
+              placeholder="Link zum Webinarraum für den Moderator"
+              :required="true"
+              ref="access_moderator"
+            ></input-element>
+            <input-error :message="errors.access_moderator" />
+          </input-container>
+
           <input-container :full-width="true">
             <input-label
               name="description"
@@ -362,6 +394,8 @@ export default defineComponent({
         event_start: this.webinar.event_start,
         description: this.webinar.description,
         access: this.webinar.access,
+        access_start: this.webinar.access_start,
+        access_moderator: this.webinar.access_moderator,
         active: this.webinar.active,
       },
     };

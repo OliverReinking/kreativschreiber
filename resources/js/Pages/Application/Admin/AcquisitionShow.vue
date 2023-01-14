@@ -216,28 +216,31 @@ export default defineComponent({
       return `
 Sehr geehrte Damen und Herren,
 
-ich hoffe, Sie sind gut ins neue Jahr gestartet.
+Sie sind auf der Suche nach einer innovativen Lösung, um Ihre Online-Präsenz zu stärken? Dann habe ich genau das Richtige für Sie!
 
-Als Betreiber eines Online-Shops möchte ich Ihnen gerne eine neue Anwendung vorstellen, die ich entwickelt habe: KreativSchreiber.
-KreativSchreiber ist eine webbasierte Anwendung, die mithilfe von künstlicher Intelligenz professionelle und qualitativ hochwertige Blog- und Werbetexte erstellt.
-Unternehmen können mit KreativSchreiber ihre Online-Präsenz stärken und ihre Marketingkampagnen verbessern.
+Ich bin Oliver Reinking, Mathematiker und Softwareentwickler, und ich habe die webbasierte Anwendung KreativSchreiber entwickelt.
+Mit KreativSchreiber haben Sie Zugriff auf fortschrittliche künstliche Intelligenz, mit der Sie leicht professionelle und hochwertige Blog- und Werbetexte erstellen können.
 
-Ich würde Ihnen gerne eine kostenlose Testphase anbieten, in der Sie KreativSchreiber ausprobieren können. Ich glaube, dass die Anwendung auch für Ihren Online-Shop von großem Nutzen sein könnte.
+Als Betreiber eines Online-Shops wissen Sie wie wichtig es ist, Ihre Botschaft zu verbreiten und Ihre Zielgruppe zu erreichen.
+Mit KreativSchreiber biete ich Ihnen die Möglichkeit, genau das zu tun.
+Ich bin stolz darauf, Ihnen dabei zu helfen, Ihre Geschäftsziele zu erreichen und arbeite ständig daran, meine Dienstleistungen zu verbessern und neue Wege zu finden, um Ihnen den größtmöglichen Mehrwert zu bieten.
 
-Bitte lassen Sie mich wissen, ob Sie Interesse an einer Testphase haben oder weitere Fragen zu KreativSchreiber haben. Ich stehe Ihnen gerne zur Verfügung.
+Lassen Sie sich diese Chance nicht entgehen und testen Sie KreativSchreiber noch heute!
+Ich freue mich darauf, Ihnen weiterhelfen zu können.
 
 Mit freundlichen Grüßen,
-
 Oliver Reinking
 Diplom-Mathematiker
 
-66482 Zweibrücken
 Nordpfad 25
+66482 Zweibrücken
 
-Telefon: 06332 - 993 993
+Telefon: 0170 8819944
+Mail: oliver@codingjungle.de oder oliver@kreativschreiber.com
 
-P.S. Möchten Sie sofort starten? Hier geht es zur Webseite von KreativSchreiber: kreativschreiber.com
-Einfach registrieren und noch heute den ersten Text erstellen.`;
+Sind Sie bereit, loszulegen? Besuchen Sie jetzt die Webseite von KreativSchreiber: kreativschreiber.com, registrieren Sie sich und erstellen Sie noch heute Ihren ersten Text!
+
+`;
     },
   },
 

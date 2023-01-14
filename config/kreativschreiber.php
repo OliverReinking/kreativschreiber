@@ -3,8 +3,8 @@ use App\Models\Administration;
 return [
     // Version
     'version' => [
-        'versionnr' => '1.0.1',
-        'versionsdatum' => '08.01.2023',
+        'versionnr' => '1.0.2',
+        'versionsdatum' => '14.01.2023',
     ],
     'rechnung' => [
         'company_name' => 'KreativSchreiber, eine Web-Anwendung von Oliver Reinking (Diplom-Mathematiker)',
