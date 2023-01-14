@@ -10,16 +10,17 @@
       ></breadcrumb>
     </template>
 
+    <!-- Loading -->
+    <input-loading
+      :loading="loading"
+      :loading-text="loadingText"
+    ></input-loading>
+    <!-- ENDS Loading -->
+
     <section-form>
       <template #title>neuen Werbetext erstellen</template>
       <template #description
         >Hier kannst du einen neuen Werbetext erstellen
-        <!-- Loading -->
-        <input-loading
-          :loading="loading"
-          :loading-text="loadingText"
-        ></input-loading>
-        <!-- ENDS Loading -->
       </template>
 
       <template #form>

@@ -81,12 +81,18 @@ class AdminSeeder extends Seeder
         ]);
         //
         $person_company = PersonCompany::factory()->create([
-            'is_natural_person' => false,
+            'is_natural_person' => true,
             'name' => 'Codingjungle',
-            'contactperson_salutation_id' => 1,
+            'country_id' => Country::COUNTRY_GERMANY,
+            'contactperson_salutation_id' => Salutation::SALUTATION_MALE,
             'contactperson_last_name' => 'Oliver',
             'contactperson_first_name' => 'Reinking',
             'contactperson_email' => 'oliver@codingjungle.de',
+            'billing_address' => 'Oliver Reinking',
+            'billing_street' => 'Nordpfad 25',
+            'billing_country_id' => Country::COUNTRY_GERMANY,
+            'billing_postcode' => '66482',
+            'billing_city' => 'Zweibrücken',
         ]);
         // Create Administration
         Administration::create([
