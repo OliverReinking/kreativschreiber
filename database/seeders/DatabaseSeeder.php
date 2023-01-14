@@ -41,11 +41,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-        $this->call(WebinarData::class);
-        $this->call(CreateBlogWithMarkdownFormat::class);
+        // Aktualisierung Content Webinare und Blog
+        //$this->call(WebinarData::class);
+        //$this->call(CreateBlogWithMarkdownFormat::class);
 
         // nur im Text
-        if (1 == 2) {
+        if (1 == 1) {
             $this->call(AdminSeeder::class);
             // nur in der Testumgebung
             //$this->call(TestData::class);
