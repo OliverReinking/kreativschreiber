@@ -18,7 +18,7 @@ class RequestCreateContentAdvertising extends FormRequest
         $rules['offer'] = ['required', 'min:10', 'max:400'];
         $rules['interest_groups'] = ['nullable', 'min:5', 'max:400'];
         $rules['professional_groups'] = ['nullable', 'min:5', 'max:400'];
-        $rules['lifestyle'] = ['nullable', 'min:5', 'max:400'];
+        $rules['number_of_words'] = ['required', 'in:400,500,600,700,800,900'];
 
         return $rules;
     }
@@ -39,6 +39,9 @@ class RequestCreateContentAdvertising extends FormRequest
 
             'lifestyle.min'                => 'Für die Beschreibung des Lifestyles sind mindestens 5 Zeichen notwendig.',
             'lifestyle.max'                => 'Für die Beschreibung des Lifestyles sind maximal 400 Zeichen erlaubt.',
+
+            'number_of_words.required'     => 'Die Angabe Anzahl der Wörter ist notwendig.',
+            'number_of_words.in'           => 'Die Angabe Anzahl der Wörter muss 300, 400, 500, 600, 700, 800 oder 900 entsprechen.',
 
         ];
     }
