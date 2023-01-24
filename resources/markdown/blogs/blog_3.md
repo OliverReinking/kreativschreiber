@@ -1,4 +1,3 @@
-## Kundeninteresse wecken
 Werbetexte sind in Online-Shops von großer Bedeutung, denn sie helfen dabei, das Interesse der Kunden zu wecken und sie dazu zu bewegen, einen Kauf zu tätigen. Sie sind die Visitenkarte eines Unternehmens und sollten daher sorgfältig erstellt werden.
 
 ## Unique Selling Points

@@ -1,5 +1,3 @@
-# Erstellung eines Blogtextes
-
 In diesem Beispiel wurde ein Blogtext über den Künstler Salvadore Dali erstellt werden.
 Folgende Eingaben wurden gemacht:
 - Thema: Wer war Salvadore Dali

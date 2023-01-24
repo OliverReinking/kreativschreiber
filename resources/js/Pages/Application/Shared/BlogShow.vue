@@ -191,7 +191,7 @@
           </div>
         </div>
 
-        <div class="py-4 text-xl font-bold">
+        <div class="py-4 text-xl font-bold prose md:prose-md dark:prose-invert">
           <span v-html="blog.summary"></span>
         </div>
 

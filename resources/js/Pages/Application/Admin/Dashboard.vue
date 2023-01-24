@@ -155,7 +155,6 @@
           </template>
         </navigation-card>
 
-
         <navigation-card title="Teammitglieder" :buttonTwo="true">
           <template #icon> <icon-users /> </template>
           <template #description>

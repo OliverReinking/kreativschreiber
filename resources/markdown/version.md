@@ -1,5 +1,8 @@
 # Version
 
+## Version 1.0.3 - 24.01.2023
+- Neue Blogartikel eingefügt
+
 ## Version 1.0.2 - 14.01.2023
 - Anpassungen im Bereich Webinar
 
@@ -14,5 +17,4 @@
 
 ## Version 1.0.0 - 01.01.2023
 
-Diese Version wurde am 01.01.2023 veröffentlicht. 
 Mit dieser Version ist die Web-Anwendung **KreativSchreiber** am 07.01.2023 veröffentlicht worden.

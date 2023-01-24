@@ -42,11 +42,11 @@ class DatabaseSeeder extends Seeder
     {
 
         // Aktualisierung Content Webinare und Blog
-        //$this->call(WebinarData::class);
-        //$this->call(CreateBlogWithMarkdownFormat::class);
+        $this->call(WebinarData::class);
+        $this->call(CreateBlogWithMarkdownFormat::class);
 
-        // nur im Text
-        if (1 == 1) {
+        // nur bei der ersten Initialisierung
+        if (1 == 2) {
             $this->call(AdminSeeder::class);
             // nur in der Testumgebung
             //$this->call(TestData::class);
@@ -743,6 +743,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
 {
     public function run()
     {
+        Blog::truncate();
         // für den ersten Artikel setze markdown_on auf true
         $blog_author_id = 1;
         $blog_image_id = 21;
@@ -773,7 +774,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $title = "Die Bedeutung von Blogs";
         $summary = "Ein Blog ist eine Plattform, auf der Unternehmen ihre Gedanken, Meinungen und Neuigkeiten mit ihren Lesern teilen können und hilft dabei, Traffic auf der Unternehmenswebsite zu generieren, das Vertrauen der Leser zu stärken und das Suchmaschinenranking zu verbessern. Regelmäßige Veröffentlichung von interessanten und relevanten Inhalten ist entscheidend. Ein Blog ist ein wichtiges Marketinginstrument für Unternehmen.";
         $blog_date = new Carbon("2023-01-08");
-        $reading_time = 3;
+        $reading_time = 4;
         //
         Blog::create([
             'blog_author_id' => $blog_author_id,
@@ -796,7 +797,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $title = "Bedeutung von Werbetexten in Online-Shops";
         $summary = "Werbetexte in Online-Shops sind wichtig, um das Interesse der Kunden zu wecken und sie zum Kauf zu bewegen. Sie sollten die Vorteile und USPs eines Produkts hervorheben und zeigen, wie es das Leben der Kunden verbessern kann. Sie sollten gut strukturiert, leicht verständlich, kurz und prägnant sein und einen ansprechenden Schreibstil und eine gute Lesbarkeit aufweisen.";
         $blog_date = new Carbon("2023-01-15");
-        $reading_time = 3;
+        $reading_time = 4;
         //
         Blog::create([
             'blog_author_id' => $blog_author_id,
@@ -819,7 +820,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $title = "Wer war Zaha Hadid?";
         $summary = "Der KreativSchreiber hat diesen Text geschrieben. Er handelt von der Architektin Zaha Hadid und zeigt, dass der KreativSchreiber hochwertige Texte liefern kann.";
         $blog_date = new Carbon("2023-01-22");
-        $reading_time = 3;
+        $reading_time = 5;
         //
         Blog::create([
             'blog_author_id' => $blog_author_id,
@@ -831,9 +832,9 @@ class CreateBlogWithMarkdownFormat extends Seeder
             'content' => null,
             'reading_time' => $reading_time,
             'markdown_on' => true,
-            'audio_on' => false,
-            'audio_url' => null,
-            'audio_duration' => null,
+            'audio_on' => true,
+            'audio_url' => '/audio/blogs/blog_4.mp3',
+            'audio_duration' => 207,
         ]);
         // für den fünften Artikel setze markdown_on auf true
         $blog_author_id = 1;
@@ -842,7 +843,7 @@ class CreateBlogWithMarkdownFormat extends Seeder
         $title = "Wer war Salvadore Dali?";
         $summary = "Der KreativSchreiber hat diesen Text geschrieben. Er handelt von dem Künstler Salvadore Dali und zeigt, dass der KreativSchreiber hochwertige Texte liefern kann.";
         $blog_date = new Carbon("2023-01-29");
-        $reading_time = 3;
+        $reading_time = 5;
         //
         Blog::create([
             'blog_author_id' => $blog_author_id,
@@ -854,9 +855,55 @@ class CreateBlogWithMarkdownFormat extends Seeder
             'content' => null,
             'reading_time' => $reading_time,
             'markdown_on' => true,
-            'audio_on' => false,
-            'audio_url' => null,
-            'audio_duration' => null,
+            'audio_on' => true,
+            'audio_url' => '/audio/blogs/blog_5.mp3',
+            'audio_duration' => 199,
+        ]);
+        // für den 6-ten Artikel setze markdown_on auf true
+        $blog_author_id = 1;
+        $blog_image_id = 25;
+        $blog_category_id = 2;
+        $title = "10 Tipps für erfolgreiche Online-Marketingkampagnen mit KreativSchreiber";
+        $summary = "Der Artikel beschreibt, wie man erfolgreiche Online-Marketingkampagnen durchführt, indem man die Anwendung KreativSchreiber, die auf ChatGPT-Technologie basiert, verwendet. Es werden 10 Tipps gegeben, wie man Ziele definiert, das Zielpublikum kennt, eine starke Marke aufbaut, ansprechende Inhalte erstellt, soziale Medien nutzt, die Website optimiert, A/B-Tests durchführt, E-Mail-Marketing nutzt, in Werbung investiert und die Ergebnisse misst und analysiert.";
+        $blog_date = new Carbon("2023-02-05");
+        $reading_time = 7;
+        //
+        Blog::create([
+            'blog_author_id' => $blog_author_id,
+            'blog_image_id' => $blog_image_id,
+            'blog_category_id' => $blog_category_id,
+            'title' => $title,
+            'summary' => $summary,
+            'blog_date' => $blog_date,
+            'content' => null,
+            'reading_time' => $reading_time,
+            'markdown_on' => true,
+            'audio_on' => true,
+            'audio_url' => '/audio/blogs/blog_6.mp3',
+            'audio_duration' => 274,
+        ]);
+        // für den 7-ten Artikel setze markdown_on auf true
+        $blog_author_id = 1;
+        $blog_image_id = 26;
+        $blog_category_id = 2;
+        $title = "Die Vorteile von ChatGPT für Unternehmen: Ein Vergleich mit traditionellen Textgeneratoren";
+        $summary = "Der Artikel beschreibt die Vorteile von ChatGPT im Vergleich zu traditionellen Textgeneratoren für Unternehmen. ChatGPT bietet die Fähigkeit natürliche Sprache zu verstehen und zu erzeugen, komplexe Aufgaben auszuführen, angepasst und trainiert zu werden, in Echtzeit genutzt werden und personalisierte Inhalte zu erstellen, was Unternehmen dabei helfen kann die Online-Präsenz zu stärken und Marketingbemühungen zu unterstützen.";
+        $blog_date = new Carbon("2023-03-05");
+        $reading_time = 6;
+        //
+        Blog::create([
+            'blog_author_id' => $blog_author_id,
+            'blog_image_id' => $blog_image_id,
+            'blog_category_id' => $blog_category_id,
+            'title' => $title,
+            'summary' => $summary,
+            'blog_date' => $blog_date,
+            'content' => null,
+            'reading_time' => $reading_time,
+            'markdown_on' => true,
+            'audio_on' => true,
+            'audio_url' => '/audio/blogs/blog_7.mp3',
+            'audio_duration' => 235,
         ]);
     }
 }
