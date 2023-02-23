@@ -76,7 +76,7 @@ module.exports = {
                 "on-nightsecondary-darker": "#111827",
             },
             fontFamily: {
-                sans: ['Open Sans', 'Ubuntu', ...defaultTheme.fontFamily.sans],
+                sans: ["'Open Sans'", 'Ubuntu', ...defaultTheme.fontFamily.sans],
                 logo: ["Inconsolata", ...defaultTheme.fontFamily.sans],
                 title: ["Ubuntu", "Inter", ...defaultTheme.fontFamily.sans],
             },
