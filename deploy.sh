@@ -1,5 +1,5 @@
 #!/bin/sh -l
 
 git add .
-git commit -m "Neue Blogartikel eingefügt"
+git commit -m "npm install durchgeführt, nodes vorher komplett gelöscht"
 git push
