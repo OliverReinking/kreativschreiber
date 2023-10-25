@@ -480,22 +480,22 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function () {
         // ==========
         // Teammember
         // ==========
-        // Liste der Anwender des Consultants
+        // Liste der teammember (users)
         Route::get('/customer/teammember/index', [UserController::class, 'customer_teammember_index'])
             ->name('customer.teammember.index')->middleware('remember');
-        // Create a new teammember
+        // Create a new teammember (users)
         Route::get('/customer/teammember/create', [UserController::class, 'customer_teammember_create'])
             ->name('customer.teammember.create');
-        // Store new teammember
+        // Store new teammember (users)
         Route::post('/customer/teammember/store', [UserController::class, 'customer_teammember_store'])
             ->name('customer.teammember.store');
-        // Edit des Anwenders
+        // Edit teammember (users)
         Route::get('/customer/teammember/{user}/edit', [UserController::class, 'customer_teammember_edit'])
             ->name('customer.teammember.edit');
-        // Update des Anwenders
+        // Update teammember (users)
         Route::put('/customer/teammember/{user}', [UserController::class, 'customer_teammember_update'])
             ->name('customer.teammember.update');
-        // Delete Anwenders
+        // Delete teammember (users)
         Route::delete('/customer/teammember/{user}', [UserController::class, 'customer_teammember_delete'])
             ->name('customer.teammember.delete');
         // ===========

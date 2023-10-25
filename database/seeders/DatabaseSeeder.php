@@ -46,7 +46,7 @@ class DatabaseSeeder extends Seeder
         $this->call(CreateBlogWithMarkdownFormat::class);
 
         // nur bei der ersten Initialisierung
-        if (1 == 2) {
+        if (1 == 1) {
             $this->call(AdminSeeder::class);
             // nur in der Testumgebung
             //$this->call(TestData::class);

@@ -110,7 +110,6 @@ class BookingController extends Controller
     //
     public function customer_booking_buying(int $points)
     {
-
         // validiere $points
         if ($points != 5000 && $points != 10000 && $points != 20000) {
             $error = "Der Kauf der KreativSchreiber-Punkte hat leider nicht geklappt.<br />";
@@ -256,7 +255,7 @@ class BookingController extends Controller
             $value_added_tax = 0;
             $gross_price = 108;
         }
-        // erstelle die rechnung
+        // erstelle die Rechnung
         $invoice = Invoice::create([
             'currency_id' => Currency::CURRENCY_EURO,
             'person_company_id' => $person_company->id,
